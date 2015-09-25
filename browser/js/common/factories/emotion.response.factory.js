@@ -25,16 +25,16 @@ app.factory('EmotionResponseFactory', function(){
 			return "neutral";
 		}
 		else if(emotionObj.emotionIndex < 0.1 && emotionObj.happy > 0.3){
-			return "duck face";
+			return "duckFace";
 		}
 		else if(emotionObj.emotionIndex > 0.5){
-			return "very happy";
+			return "veryHappy";
 		}
 		else if(emotionObj.emotionIndex > 0){
 			return "happy";
 		}
 		else if(emotionObj.emotionIndex < -0.5){
-			return "very sad";
+			return "verySad";
 		}
 		else {
 			return "sad";
