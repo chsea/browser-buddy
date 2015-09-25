@@ -59,29 +59,19 @@ app.directive('videoFeed', function() {
       function drawLoop() {
         requestAnimFrame(drawLoop);
         overlayCC.clearRect(0, 0, 400, 300);
-        //psrElement.innerHTML = "score :" + ctrack.getScore().toFixed(4);
         if (ctrack.getCurrentPosition()) {
           ctrack.draw(overlay);
         }
         var cp = ctrack.getCurrentParameters();
-        // scope.val = ec.predict()[0];
-        var er = ec.meanPredict(cp);
-        if (er) {
-          console.log(er[0].value);
-          //updateData(er);
-          // for (var i = 0; i < er.length; i++) {
-          //   if (er[i].value > 0.4) {
-          //     document.getElementById('icon' + (i + 1)).style.visibility = 'visible';
-          //   } else {
-          //     document.getElementById('icon' + (i + 1)).style.visibility = 'hidden';
-          //   }
-          // }
+        var eResponse = eClassifier.meanPredict(cp);
+        if (eReponse) {
+          console.log(eReponse);
         }
       }
 
-      var ec = new emotionClassifier();
-      ec.init(emotionModel);
-      var emotionData = ec.getBlank();
+      var eClassifier = new emotionClassifier();
+      eClassifier.init(emotionModel);
+      var emotionData = eClassifier.getBlank();
     }
   };
 });
