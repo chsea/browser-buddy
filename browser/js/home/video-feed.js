@@ -1,8 +1,8 @@
-app.directive('videoFeed', function(EmotionResponseFactory, $scope) {
+app.directive('videoFeed', function(EmotionResponseFactory) {
   return {
     restrict: 'E',
     templateUrl: 'js/home/video-feed.html',
-    link: (scope, e, a, rootscope) => {
+    link: (scope, e, a) => {
       var vid = document.getElementById('videoel');
       var overlay = document.getElementById('overlay');
       var overlayCC = overlay.getContext('2d');
@@ -47,6 +47,8 @@ app.directive('videoFeed', function(EmotionResponseFactory, $scope) {
       var ctrack = new clm.tracker({ useWebGL: true });
       ctrack.init(pModel);
 
+      //scope.greeting = "hi";
+
       scope.startVideo = function() {
         // start video
         vid.play();
@@ -56,8 +58,8 @@ app.directive('videoFeed', function(EmotionResponseFactory, $scope) {
         drawLoop();
       };
       scope.val = null;
-      rootscope.emotion = null;
-      rootscope.lastChanged = new Date();
+      scope.emotion = null;
+      scope.lastChanged = new Date();
       function drawLoop() {
         requestAnimFrame(drawLoop);
         overlayCC.clearRect(0, 0, 400, 300);
@@ -66,17 +68,21 @@ app.directive('videoFeed', function(EmotionResponseFactory, $scope) {
         }
         var cp = ctrack.getCurrentParameters();
         var eResponse = eClassifier.meanPredict(cp);
-        if (eReponse) {
-          EmotionResponseFactory.setEmotion(eReponse[3].value, eResponse[1].value);
-          if (rootscope.emotion != EmotionResponseFactory.howDoYouFeel()) {
-            if (new Date() - rootscope.lastChanged > 10000) {
-              rootscope.emotion = EmotionResponseFactory.howDoYouFeel();
-              rootscope.$broadcast(EmotionResponseFactory.howDoYouFeel());
-              rootscope.lastChanged = new Date();
-            }
+        if (eResponse) {
+
+          EmotionResponseFactory.setEmotion(eResponse[3].value, eResponse[1].value);
+          console.log(EmotionResponseFactory.howDoYouFeel())
+          if (scope.emotion != EmotionResponseFactory.howDoYouFeel()) {
+            //if (new Date() - scope.lastChanged > 1000) {
+              scope.emotion = EmotionResponseFactory.howDoYouFeel();
+              //scope.$broadcast(EmotionResponseFactory.howDoYouFeel());
+              scope.lastChanged = new Date();
+            //}
           }
         }
       }
+
+      scope.hi = "hi";
 
       var eClassifier = new emotionClassifier();
       eClassifier.init(emotionModel);
