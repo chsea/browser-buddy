@@ -7,27 +7,11 @@ app.directive('videoFeed', function() {
       var overlay = document.getElementById('overlay');
       var overlayCC = overlay.getContext('2d');
 
-      /********** check and set up video/webcam **********/
-
       function enablestart() {
         var startbutton = document.getElementById('startbutton');
         startbutton.value = "start";
         startbutton.disabled = null;
       }
-
-      /*var insertAltVideo = function(video) {
-        if (supports_video()) {
-          if (supports_ogg_theora_video()) {
-            video.src = "../media/cap12_edit.ogv";
-          } else if (supports_h264_baseline_video()) {
-            video.src = "../media/cap12_edit.mp4";
-          } else {
-            return false;
-          }
-          //video.play();
-          return true;
-        } else return false;
-      }*/
       navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
       window.URL = window.URL || window.webkitURL || window.msURL || window.mozURL;
 
