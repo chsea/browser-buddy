@@ -2,7 +2,7 @@ app.directive('videoFeed', function(EmotionResponseFactory, $scope) {
   return {
     restrict: 'E',
     templateUrl: 'js/home/video-feed.html',
-    link: (scope) => {
+    link: (scope, e, a, rootscope) => {
       var vid = document.getElementById('videoel');
       var overlay = document.getElementById('overlay');
       var overlayCC = overlay.getContext('2d');
@@ -56,6 +56,8 @@ app.directive('videoFeed', function(EmotionResponseFactory, $scope) {
         drawLoop();
       };
       scope.val = null;
+      rootscope.emotion = null;
+      rootscope.lastChanged = new Date();
       function drawLoop() {
         requestAnimFrame(drawLoop);
         overlayCC.clearRect(0, 0, 400, 300);
@@ -66,7 +68,13 @@ app.directive('videoFeed', function(EmotionResponseFactory, $scope) {
         var eResponse = eClassifier.meanPredict(cp);
         if (eReponse) {
           EmotionResponseFactory.setEmotion(eReponse[3].value, eResponse[1].value);
-          scope.$emit(EmotionResponseFactory.howDoYouFeel());
+          if (rootscope.emotion != EmotionResponseFactory.howDoYouFeel()) {
+            if (new Date() - rootscope.lastChanged > 10000) {
+              rootscope.emotion = EmotionResponseFactory.howDoYouFeel();
+              rootscope.$broadcast(EmotionResponseFactory.howDoYouFeel());
+              rootscope.lastChanged = new Date();
+            }
+          }
         }
       }
 
