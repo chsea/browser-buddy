@@ -8,8 +8,10 @@ app.factory('BuddyFactory', function($http) {
   }
 
   function getOneBuddy(id) {
+    console.log("we're here")
     return $http.get('/api/buddy/' + id)
       .then(function(response) {
+        console.log(response)
         return response.data;
       })
   }
