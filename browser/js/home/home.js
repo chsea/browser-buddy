@@ -11,12 +11,14 @@ app.config(function ($stateProvider) {
     }
   });
 }).controller('MainController', function($scope, BuddyFactory, theBuddy, $state, buddies, Buddy, $rootScope){
-  setInterval(() => {
+  var response;
+  setInterval(() => $scope.$apply(() => {
     console.log($scope.emotion);
-    let response = currentBuddy ? currentBuddy.responses[$scope.emotion] : null;
+    response = currentBuddy ? currentBuddy.responses[$scope.emotion] : null;
     response = response? response.text : null;
+  	$scope.buddyResponse = response;
     console.log(response);
-  }, 100);
+  }), 100);
 	var buddyId;
 	// $scope.buddies = theBuddy;
   	$scope.buddies = buddies;
@@ -30,7 +32,4 @@ app.config(function ($stateProvider) {
     currentBuddy = _.find(buddies, (buddy) => buddy._id == buddyId);
     console.log(`hi ${currentBuddy.firstName}`);
   };
-  let response = currentBuddy ? currentBuddy.responses[$scope.emotion] : null;
-  response = response? response.text : 'null';
-	$scope.buddyResponse = response;
 });
