@@ -24,7 +24,7 @@ app.factory('EmotionResponseFactory', function(){
 		if (emotionObj.sad < 0.2 && emotionObj.happy < 0.2){
 			return "neutral";
 		}
-		else if(emotionObj.emotionObj < 0.1 && emotionObj.happy > 0.4){
+		else if(emotionObj.emotionIndex < 0.1 && emotionObj.happy > 0.3){
 			return "duck face";
 		}
 		else if(emotionObj.emotionIndex > 0.5){
