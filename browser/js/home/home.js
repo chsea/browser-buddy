@@ -6,27 +6,20 @@ app.config(function ($stateProvider) {
     resolve: {
     	theBuddy: function(BuddyFactory){
     		return BuddyFactory.getBuddies();
-    	}
+    	},
+      buddies: (Buddy) => Buddy.findAll()
     }
   });
-});
-
-
-app.controller('MainController', function($scope, BuddyFactory, theBuddy, $state){
-
+}).controller('MainController', function($scope, BuddyFactory, theBuddy, $state, buddies, Buddy){
 	var buddyId;
-	$scope.buddies = theBuddy;
-	$scope.currentBuddy;
+	// $scope.buddies = theBuddy;
+  $scope.buddies = buddies;
+	$scope.currentBuddy = null;
 	$scope.chooseBuddy = function(){
 		buddyId = $scope.buddy;
 		console.log(buddyId);
-		$scope.currentBuddy = BuddyFactory.getOneBuddy(buddyId);
-		}
-	});
-
-
-
-
-
-
-
+		// $scope.currentBuddy = BuddyFactory.getOneBuddy(buddyId);
+    // $scope.currentBuddy = Buddy.find(buddyId);
+    $scope.currentBuddy = _.find(buddies, (buddy) => buddy._id == buddyId);
+  };
+});
