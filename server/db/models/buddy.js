@@ -27,7 +27,7 @@ var schema = new mongoose.Schema({
         sad: {
             text: String,
             audio: String
-        }
+        },
         verySad: {
             text: String,
             audio: String
