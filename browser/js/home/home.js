@@ -19,6 +19,7 @@ app.config(function ($stateProvider) {
 		buddyId = $scope.buddy;
 		console.log(buddyId);
 		// $scope.currentBuddy = BuddyFactory.getOneBuddy(buddyId);
-    $scope.currentBuddy = Buddy.find(buddyId);
+    // $scope.currentBuddy = Buddy.find(buddyId);
+    $scope.currentBuddy = _.find(buddies, (buddy) => buddy._id == buddyId);
   };
 });
