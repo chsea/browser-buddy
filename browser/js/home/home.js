@@ -10,10 +10,12 @@ app.config(function ($stateProvider) {
       buddies: (Buddy) => Buddy.findAll()
     }
   });
-}).controller('MainController', function($scope, BuddyFactory, theBuddy, $state, buddies, Buddy){
+}).controller('MainController', function($scope, BuddyFactory, theBuddy, $state, buddies, Buddy, $rootScope){
 	var buddyId;
 	// $scope.buddies = theBuddy;
-  $scope.buddies = buddies;
+  	$scope.buddies = buddies;
+  	// $scope.emotion = $rootScope.emotion;
+  	// $scope.hi = $rootScope.hi;
 	$scope.currentBuddy = null;
 	$scope.chooseBuddy = function(){
 		buddyId = $scope.buddy;
