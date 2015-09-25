@@ -13,9 +13,20 @@ app.config(function ($stateProvider) {
 
 
 app.controller('MainController', function($scope, BuddyFactory, theBuddy, $state){
+
+	var buddyId;
 	$scope.buddies = theBuddy;
-	
-})
+	$scope.currentBuddy;
+	$scope.chooseBuddy = function(){
+		buddyId = $scope.buddy;
+		console.log(buddyId);
+		$scope.currentBuddy = BuddyFactory.getOneBuddy(buddyId);
+		}
+	});
+
+
+
+
 
 
 
