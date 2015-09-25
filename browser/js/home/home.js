@@ -13,11 +13,10 @@ app.config(function ($stateProvider) {
 }).controller('MainController', function($scope, BuddyFactory, theBuddy, $state, buddies, Buddy, $rootScope){
   var response;
   setInterval(() => $scope.$apply(() => {
-    console.log($scope.emotion);
     response = currentBuddy ? currentBuddy.responses[$scope.emotion] : null;
-    response = response? response.text : null;
-  	$scope.buddyResponse = response;
     console.log(response);
+  	$scope.buddyResponse = response ? response.text : null;
+    $scope.imgSrc = response ? response.url : null;
   }), 100);
 	var buddyId;
 	// $scope.buddies = theBuddy;

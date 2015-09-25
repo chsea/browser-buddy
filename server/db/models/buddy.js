@@ -18,31 +18,31 @@ var schema = new mongoose.Schema({
     responses: {
         happy: {
             text: String,
-            audio: String
+            url: String
         },
         veryHappy: {
             text: String,
-            audio: String
+            url: String
         },
         sad: {
             text: String,
-            audio: String
+            url: String
         },
         verySad: {
             text: String,
-            audio: String
+            url: String
         },
         happyConsistent: {
             text: String,
-            audio: String
+            url: String
         },
         sadConsistent: {
             text: String,
-            audio: String
+            url: String
         },
         duckFace: {
             text: String,
-            audio: String
+            url: String
         }
 
     }
