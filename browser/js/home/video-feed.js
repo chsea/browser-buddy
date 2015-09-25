@@ -1,4 +1,4 @@
-app.directive('videoFeed', function() {
+app.directive('videoFeed', function(EmotionResponseFactory, $scope) {
   return {
     restrict: 'E',
     templateUrl: 'js/home/video-feed.html',
@@ -59,20 +59,20 @@ app.directive('videoFeed', function() {
       function drawLoop() {
         requestAnimFrame(drawLoop);
         overlayCC.clearRect(0, 0, 400, 300);
-        //psrElement.innerHTML = "score :" + ctrack.getScore().toFixed(4);
         if (ctrack.getCurrentPosition()) {
           ctrack.draw(overlay);
         }
         var cp = ctrack.getCurrentParameters();
-        // scope.val = ec.predict()[0];
-        var er = ec.meanPredict(cp);
-        if (er) {
+        var eResponse = eClassifier.meanPredict(cp);
+        if (eReponse) {
+          EmotionResponseFactory.setEmotion(eReponse[3].value, eResponse[1].value);
+          scope.$emit(EmotionResponseFactory.howDoYouFeel());
         }
       }
 
-      var ec = new emotionClassifier();
-      ec.init(emotionModel);
-      var emotionData = ec.getBlank();
+      var eClassifier = new emotionClassifier();
+      eClassifier.init(emotionModel);
+      var emotionData = eClassifier.getBlank();
     }
   };
 });
