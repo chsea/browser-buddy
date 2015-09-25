@@ -67,15 +67,6 @@ app.directive('videoFeed', function() {
         // scope.val = ec.predict()[0];
         var er = ec.meanPredict(cp);
         if (er) {
-          console.log(er[0].value);
-          //updateData(er);
-          // for (var i = 0; i < er.length; i++) {
-          //   if (er[i].value > 0.4) {
-          //     document.getElementById('icon' + (i + 1)).style.visibility = 'visible';
-          //   } else {
-          //     document.getElementById('icon' + (i + 1)).style.visibility = 'hidden';
-          //   }
-          // }
         }
       }
 
