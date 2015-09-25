@@ -2,6 +2,7 @@
 var router = require('express').Router();
 module.exports = router;
 
+router.user('/buddy', require('./buddy.router'))
 router.use('/members', require('./members'));
 
 // Make sure this is after all of
