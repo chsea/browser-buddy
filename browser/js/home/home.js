@@ -11,6 +11,8 @@ app.config(function ($stateProvider) {
     }
   });
 }).controller('MainController', function($scope, BuddyFactory, theBuddy, $state, buddies, Buddy, $rootScope){
+  setInterval(() => console.log($scope.emotion), 100);
+  console.log($scope.emotion);
 	var buddyId;
 	// $scope.buddies = theBuddy;
   	$scope.buddies = buddies;
