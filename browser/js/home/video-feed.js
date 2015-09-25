@@ -69,12 +69,13 @@ app.directive('videoFeed', function(EmotionResponseFactory) {
         var cp = ctrack.getCurrentParameters();
         var eResponse = eClassifier.meanPredict(cp);
         if (eResponse) {
-
           EmotionResponseFactory.setEmotion(eResponse[3].value, eResponse[1].value);
-          console.log(EmotionResponseFactory.howDoYouFeel())
+          setInterval(() => {
+            scope.$digest();
+            scope.emotion = EmotionResponseFactory.howDoYouFeel();
+          }, 1000);
           if (scope.emotion != EmotionResponseFactory.howDoYouFeel()) {
             //if (new Date() - scope.lastChanged > 1000) {
-              scope.emotion = EmotionResponseFactory.howDoYouFeel();
               //scope.$broadcast(EmotionResponseFactory.howDoYouFeel());
               scope.lastChanged = new Date();
             //}
