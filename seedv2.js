@@ -20,15 +20,33 @@ Buddy.remove({}, function(err, removed) {
 var seedBuddy =[{
   firstName: 'Omri',
   lastName: 'Zeke',
-  picture: 'http://www.fullstackacademy.com/img/team/omri_bernstein@2x.jpg',
   responses: {
-    happy: {text: 'Interesting'},
-    veryHappy: {text: 'Oh interesting'},
-    sad: {text: 'Hmmm...interesting...'},
-    verySad: {text: 'Well, that is interesting'},
-    happyConsistent: {text: 'Interesting...'},
-    sadConsistent: {text: 'Well...Interesting...'},
-    duckFace: {text: 'Interesting duck face...'}
+    happy: {
+      text: 'Interesting',
+      url: '/images/omri/happy.jpg',
+    },
+    veryHappy: {
+      text: 'Interesting',
+      url: '/images/omri/veryhappy.jpg',
+    },
+    sad: {
+      text: 'Interesting...',
+      url: '/images/omri/sad.jpg',
+    },
+    verySad: {
+      text: 'Interesting',
+      url: '/images/omri/verysad.jpg',
+    },
+    happyConsistent: {
+      text: 'Interesting...'
+    },
+    sadConsistent: {
+      text: 'Well...Interesting...'
+    },
+    duckFace: {
+      text: 'Interesting duck face...',
+      url: '/images/omri/duckface.jpg'
+    }
   }
 },
 {
@@ -93,11 +111,3 @@ connectToDb.then(function() {
       process.kill(1);
     });
 });
-
-
-
-
-
-
-
-
