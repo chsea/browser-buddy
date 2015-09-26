@@ -1,58 +1,77 @@
-/*
-
-This seed file is only a placeholder. It should be expanded and altered
-to fit the development of your application.
-
-It uses the same file the server uses to establish
-the database connection:
---- server/db/index.js
-
-The name of the database used is set in your environment files:
---- server/env/*
-
-This seed file has a safety check to see if you already have users
-in the database. If you are developing multiple applications with the
-fsg scaffolding, keep in mind that fsg always uses the same database
-name in the environment files.
-
-*/
-
 var mongoose = require('mongoose');
 var Promise = require('bluebird');
 var chalk = require('chalk');
 var connectToDb = require('./server/db');
 var User = Promise.promisifyAll(mongoose.model('User'));
+var Buddy = Promise.promisifyAll(mongoose.model('Buddy'));
 
-var seedUsers = function () {
+var seedBuddy =[{
+  name: 'Omri',
+  defaultPicture: '/images/omri/default.jpg',
+  responses: {
+    happy: {
+      text: 'Interesting.',
+      url: '/images/omri/happy.jpg',
+    },
+    veryHappy: {
+      text: 'Interesting.',
+      url: '/images/omri/veryhappy.jpg',
+    },
+    sad: {
+      text: 'Interesting.',
+      url: '/images/omri/sad.jpg',
+    },
+    verySad: {
+      text: 'Interesting.',
+      url: '/images/omri/verysad.jpg',
+    },
+    duckFace: {
+      text: 'Not interesting.',
+      url: '/images/omri/duckface.jpg'
+    }
+  }
+// },
+// {
+//   firstName: 'Joe',
+//   lastName: 'Salty',
+//   picture: 'https://scontent-lga3-1.xx.fbcdn.net/hphotos-xfp1/v/t1.0-9/10959514_10100487453212058_9140311506332778584_n.jpg?oh=b5f675e9062fafd5506b94f80c5c63c3&oe=5696E12B',
+//   responses: {
+//     happy: {text: 'Something happy salty'},
+//     veryHappy: {text: 'Something extra salty'},
+//     sad: {text: 'Salty salty salty'},
+//     verySad: {text: 'Sooooo salty'},
+//     happyConsistent: {text: 'Still salty'},
+//     sadConsistent: {text: 'Extra salty'},
+//     duckFace: {text: 'What a salty duck face'}
+//   }
+// },
+// {
+//   firstName: 'Patrick',
+//   lastName: 'The Dog',
+//   picture: 'http://a57.foxnews.com/global.fncstatic.com/static/managed/img/fn2/feeds/LiveScience/876/493/dog-bacteria.jpg?ve=1&tl=1',
+//   responses: {
+//     happy: {text: 'Woof'},
+//     veryHappy: {text: 'Woof'},
+//     sad: {text: 'Woof'},
+//     verySad: {text: 'Woof'},
+//     happyConsistent: {text: 'Woof'},
+//     sadConsistent: {text: 'Woof'},
+//     duckFace: {text: 'Woof'}
+//   }
+}];
 
-    var users = [
-        {
-            email: 'testing@fsa.com',
-            password: 'password'
-        },
-        {
-            email: 'obama@gmail.com',
-            password: 'potus'
-        }
-    ];
-
-    return User.createAsync(users);
-
-};
-
-connectToDb.then(function () {
-    User.findAsync({}).then(function (users) {
-        if (users.length === 0) {
-            return seedUsers();
-        } else {
-            console.log(chalk.magenta('Seems to already be user data, exiting!'));
-            process.kill(0);
-        }
-    }).then(function () {
-        console.log(chalk.green('Seed successful!'));
-        process.kill(0);
-    }).catch(function (err) {
-        console.error(err);
-        process.kill(1);
+connectToDb.then(function() {
+  var saveBuddies;
+  Buddy.remove({}).
+    then(function() {
+      return Buddy.createAsync(seedBuddy);
+    })
+    .then(function(buddies) {
+      console.log(chalk.green(buddies.length, ' buddies seeded!'));
+      process.kill(0);
+    })
+    .catch(function(err) {
+      console.error(err);
+      process.kill(1);
     });
 });
