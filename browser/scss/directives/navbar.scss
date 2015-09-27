@@ -7,6 +7,7 @@ navbar {
   background-color: #333333;
   border-bottom: 1px solid black;
   box-shadow: 1px 1px 14px -3px black;
+  padding-bottom: 15px;
 
   .container {
     width: 91%;
@@ -70,8 +71,11 @@ navbar {
 
   .login-button {
     float: right;
+    color: white;
+    font-family: 'Open Sans';
     border: 1px solid white;
-    margin-top: 10px;
+    margin-top: -20px;
+    margin-buttom: 10px;
     background: none;
     outline: none !important;
   }
