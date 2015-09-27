@@ -8,6 +8,7 @@ navbar {
   border-bottom: 1px solid black;
   box-shadow: 1px 1px 14px -3px black;
   padding-bottom: 15px;
+  font-family: 'Open Sans';
 
   .container {
     width: 91%;
@@ -17,6 +18,7 @@ navbar {
 
   a {
     color: white;
+
     font-size: 16px;
   }
 
@@ -68,21 +70,29 @@ navbar {
     font-family: 'Open Sans';
     border: 1px solid white;
     margin-top: -20px;
-    margin-buttom: 10px;
+    margin-bottom: 10px;
     background: none;
     outline: none !important;
   }
 
   .welcome {
     float: right;
-    margin-top: 12px;
-    span {
-      color: white;
-    }
-    a {
-      color: #f30046;
-      cursor: pointer;
-    }
+    margin-top: 5px;
+  
+}
+
+  .welcome span{
+    color: blue;
+    font-family: 'Open Sans';
+    margin-right: 10px;
+
   }
+
+  .welcome a {
+      color: #f31214;
+      cursor: pointer;
+      font-family: 'Open Sans';
+      margin-left: 10px;
+    }
 
 }
