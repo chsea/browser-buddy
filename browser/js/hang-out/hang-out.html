@@ -87,17 +87,14 @@
 			}
   </style>
 	<form ng-submit="chooseBuddy()">
-   		<select placeholder="Buddies" ng-model="buddy" name="buddy">
-   		 	<option ng-repeat="buddy in buddies" value="{{buddy._id}}">{{buddy.firstName}}</option>
-  		</select>
-  		<div class="form-actions">
-    	<button type="submit">Start Talking</button>
-  		</div>
+ 		<select placeholder="Buddies" ng-model="buddy" name="buddy">
+ 		 	<option ng-repeat="buddy in buddies" value="{{buddy._id}}">{{buddy.name}}</option>
+		</select>
+		<div class="form-actions">
+  	<button type="submit">Start Talking</button>
+		</div>
 	</form>
 	<p>HOWDY {{buddyResponse}}</p>
   <img ng-src="{{imgSrc}}" width="300" height="300"/>
-	<!-- <h2>{{currentBuddy.firstName}}{{currentBuddy.lastName}}</h2>
-
-	 -->
   <video-feed></video-feed>
 </section>
