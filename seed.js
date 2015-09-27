@@ -8,7 +8,7 @@ var Buddy = Promise.promisifyAll(mongoose.model('Buddy'));
 var seedBuddy =[{
   name: 'Omri',
   defaultPicture: '/images/omri/default.jpg',
-  greeting: '/audio/omri/veryhappy.m4a',
+  greeting: '/audio/omri/greeting.m4a',
   description: 'Always Interesting',
   role: 'Instructor',
   responses: {
@@ -43,7 +43,7 @@ var seedBuddy =[{
 {
   name: 'Joe',
   defaultPicture: '/images/joe/default.jpg',
-  greeting: '/audio/omri/veryhappy.m4a',
+  greeting: '/audio/joe/greeting.m4a',
   description: 'Extra Salty',
   role: 'Instructor',
   responses: {
@@ -78,7 +78,7 @@ var seedBuddy =[{
 {
   name: 'Zeke',
   defaultPicture: '/images/zeke/default.jpg',
-  greeting: '/audio/omri/veryhappy.m4a',
+  greeting: '/audio/zeke/greeting.m4a',
   description: 'Has Not Taught 1507',
   role: 'Instructor',
   responses: {
@@ -113,7 +113,7 @@ var seedBuddy =[{
 {
   name: 'Gabe',
   defaultPicture: '/images/gabe/default.jpg',
-  greeting: '/audio/omri/veryhappy.m4a',
+  greeting: '/audio/gabe/greeting.m4a',
   description: 'Japanese Swords',
   role: 'Instructor',
   responses: {
@@ -148,7 +148,7 @@ var seedBuddy =[{
 {
   name: 'Chel',
   defaultPicture: '/images/chel/default.jpg',
-  greeting: '/audio/omri/veryhappy.m4a',
+  greeting: '/audio/chel/greeting.m4a',
   description: 'Very Chill, Always',
   role: 'Student',
   responses: {
@@ -183,7 +183,7 @@ var seedBuddy =[{
 {
   name: 'Emily',
   defaultPicture: '/images/emily/default.jpg',
-  greeting: '/audio/omri/veryhappy.m4a',
+  greeting: '/audio/emily/greeting.m4a',
   description: 'Backstreet Boys Enthusiast',
   role: 'Student',
   responses: {
@@ -218,7 +218,7 @@ var seedBuddy =[{
 {
   name: 'Jon',
   defaultPicture: '/images/jon/default.jpg',
-  greeting: '/audio/omri/veryhappy.m4a',
+  greeting: '/audio/jon/greeting.m4a',
   description: 'Master of Milkshakes',
   role: 'Student',
   responses: {
@@ -253,7 +253,7 @@ var seedBuddy =[{
 {
   name: 'Beckylee',
   defaultPicture: '/images/beckylee/default.jpg',
-  greeting: '/audio/omri/veryhappy.m4a',
+  greeting: '/audio/beckylee/greeting.m4a',
   description: 'Dance Party',
   role: 'Student',
   responses: {
@@ -288,7 +288,7 @@ var seedBuddy =[{
 {
   name: 'Dan',
   defaultPicture: '/images/dan/default.jpg',
-  greeting: '/audio/omri/veryhappy.m4a',
+  greeting: '/audio/dan/greeting.m4a',
   description: 'Delightful',
   role: 'Student',
   responses: {

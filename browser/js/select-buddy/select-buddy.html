@@ -12,16 +12,16 @@
 	</form>
 
   <div class="roleFilter">
-    Filter Buddies: 
-    <button value="Student" ng-click="filterByRole('Student')">Students</button>
-    <button value="Instructor" ng-click="filterByRole('Instructor')">Instructors</button>
-    <button value="All" ng-click="filterByRole('All')">All</button>
+    Filter Buddies:
+    <button value="Student" ng-click="role = 'Student'">Students</button>
+    <button value="Instructor" ng-click="role = 'Instructor'">Instructors</button>
+    <button value="All" ng-click="role = ''">All</button>
   </div>
 </div>
 
 <!-- display all buddies, click to chat -->
  <div class="row">
-    <div class="col-md-4 col-sm-6 col-xs-12 thumb" ng-repeat="buddy in buddies">
+    <div class="col-md-4 col-sm-6 col-xs-12 thumb" ng-repeat="buddy in buddies | filter: role | orderBy: 'name'">
     	<!-- <pre>{{buddy}}</pre> -->
       <div class="thumbnail">
         <a href ng-click="sayGreeting(buddy)">
