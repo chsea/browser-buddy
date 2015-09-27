@@ -8,27 +8,16 @@ app.config(function ($stateProvider) {
     }
   });
 }).controller('SelectBuddyController', function($scope, $state, buddies){
-  console.log(buddies);
-  $scope.buddies = buddies.sort((a, b) => a.name - b.name);
+  $scope.buddies = buddies;
+  $scope.role = '';
+  
 	$scope.chooseBuddy = () => {
     $scope.currentBuddy = _.find(buddies, (buddy) => buddy._id == $scope.buddy);
     $state.go('hangout', {id: $scope.buddy});
   };
 
-  $scope.sayGreeting = function(buddy){
-    $scope.greeter = _.find($scope.buddies, {_id: buddy._id}, $scope.greeter);
-      var greet = new Howl({urls: [$scope.greeter.greeting]
-        }).play();
+  $scope.sayGreeting = function(selectedBuddy){
+    $scope.greeter = _.find(buddies, (buddy) => buddy._id == selectedBuddy._id);
+    var greet = new Howl({urls: [$scope.greeter.greeting]}).play();
   };
-
-  $scope.filterByRole = function (role){
-    $scope.buddies = buddies;
-    if (role === 'All'){
-      $scope.buddies = buddies;
-      return;
-    }
-    $scope.buddies = _.filter($scope.buddies, {role: role}, $scope.buddies);
-    $state.go('selectBuddy');
-  };
-
 });
