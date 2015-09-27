@@ -1,13 +1,14 @@
 <div id="selectBuddy">
 <!-- dropdown menu for buddy selection -->
 <section>
-  <form ng-submit="chooseBuddy()">
- 		<select placeholder="Buddies" ng-model="buddy" name="buddy">
+  <form ng-submit="chooseBuddy()" class="chooseBuddyForm">
+ 		<select ng-model="buddy" name="buddy">
+      <option value="" disabled selected>Select From Buddy List</option>
  		 	<option ng-repeat="buddy in buddies" value="{{buddy._id}}">{{buddy.name}}</option>
 		</select>
-		<div class="form-actions">
-  	<button type="submit">Choose {{buddy.name}}!</button>
-		</div>
+	<!-- 	<div class="form-actions"> -->
+  	<button type="submit">Start Chatting!</button>
+<!-- 		</div> -->
 	</form>
 </section>
 
@@ -17,7 +18,12 @@
     	<!-- <pre>{{buddy}}</pre> -->
       <div class="thumbnail">
         <a href ng-click="sayGreeting(buddy)">
-          <img draggable='true' class="img-responsive rotate90 {{buddy.name}}" ng-src="{{buddy.defaultPicture}}" alt="">
+          <div class="profileImg">
+            <img draggable='true' class="img-responsive {{buddy.name}}" ng-src="{{buddy.defaultPicture}}" alt="">
+            <div class="imageOverlay">
+              <span>Click To Hear Greeting</span>
+            </div>
+          </div>
         </a>
         <div class="caption">
           <h5 ui-sref="hangout({id: buddy._id})">{{buddy.name}} </h5>
