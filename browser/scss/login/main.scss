@@ -1,4 +1,21 @@
+
 #login-form {
-  width: 60%;
-  margin: 0 auto;
+	font-family: 'Open Sans';
+  .form-horizontal .control-label {
+    text-align: left;
+  }
+  .loginbox {
+    border: 1px solid #eee;
+    padding: 40px 40px;
+    background: #FFFFFF;
+  }
+  .required {
+    color: #668389;
+    font-weight: 600;
+    padding: 10px 0px 0px 5px;
+  }
+  h4 {
+    margin: 0 0 20px;
+  }
+  margin-bottom: 100px;
 }
