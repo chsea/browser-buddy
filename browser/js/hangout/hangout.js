@@ -35,8 +35,10 @@ app.directive('hangout', function(EmotionResponseFactory, $http) {
       ec.init(emotionModel);
       var emotionData = ec.getBlank();
       var cp, er, getEmotionLoop, setEmotionResponseLoop;
+      scope.videoOn = false;
 
       scope.startVideo = () => {
+        scope.videoOn = true;
         getStream();
         vid.play();
         ctrack.start(vid);
@@ -45,6 +47,7 @@ app.directive('hangout', function(EmotionResponseFactory, $http) {
 
       scope.stopVideo = () => {
         $('#overlay').hide();
+        scope.videoOn = false;
         ctrack.stop();
         clearInterval(getEmotionLoop);
         clearInterval(setEmotionResponseLoop);
