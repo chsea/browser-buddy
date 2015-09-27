@@ -10,7 +10,7 @@ app.config(function ($stateProvider) {
 }).controller('SelectBuddyController', function($scope, $state, buddies){
   $scope.buddies = buddies;
   $scope.role = '';
-  
+
 	$scope.chooseBuddy = () => {
     $scope.currentBuddy = _.find(buddies, (buddy) => buddy._id == $scope.buddy);
     $state.go('hangout', {id: $scope.buddy});
