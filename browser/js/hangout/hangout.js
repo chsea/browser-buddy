@@ -74,7 +74,7 @@ app.directive('hangout', function(EmotionResponseFactory, $http) {
               urls: [response.audioUrl]
             }).play();
 
-            if (emotion === 'verySad') {
+            if (emotion === 'duckFace') {
               let can = document.getElementById('snapshot');
               can.getContext("2d").drawImage(vid, 0, 0, 400, 300, 0, 0, 400, 300);
               let img = can.toDataURL();
