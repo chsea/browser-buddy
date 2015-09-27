@@ -19,5 +19,15 @@ app.config(function ($stateProvider) {
       var greet = new Howl({urls: [$scope.greeter.greeting]
         }).play();
   };
+
+  $scope.filterByRole = function (role){
+    $scope.buddies = buddies;
+    if (role === 'All'){
+      $scope.buddies = buddies;
+      return;
+    }
+    $scope.buddies = _.filter($scope.buddies, {role: role}, $scope.buddies);
+    $state.go('selectBuddy')
+  }
   
 });

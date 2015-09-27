@@ -1,6 +1,6 @@
 <div id="selectBuddy">
 <!-- dropdown menu for buddy selection -->
-<section>
+<div class="chatControls">
   <form ng-submit="chooseBuddy()" class="chooseBuddyForm">
  		<select ng-model="buddy" name="buddy">
       <option value="" disabled selected>Select From Buddy List</option>
@@ -10,7 +10,14 @@
   	<button type="submit">Start Chatting!</button>
 <!-- 		</div> -->
 	</form>
-</section>
+
+  <div class="roleFilter">
+    Filter Buddies: 
+    <button value="Student" ng-click="filterByRole('Student')">Students</button>
+    <button value="Instructor" ng-click="filterByRole('Instructor')">Instructors</button>
+    <button value="All" ng-click="filterByRole('All')">All</button>
+  </div>
+</div>
 
 <!-- display all buddies, click to chat -->
  <div class="row">
