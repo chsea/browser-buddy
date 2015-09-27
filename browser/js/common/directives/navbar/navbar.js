@@ -10,6 +10,10 @@ app.directive('navbar', function ($rootScope, AuthService, AUTH_EVENTS, $state) 
             //     { label: 'Home', state: 'home' }
             // ];
 
+            // scope.items = [
+            //     {label: 'Create Buddy', state: 'create-buddy'}
+            //     ];
+
             scope.user = null;
 
             scope.isLoggedIn = function () {

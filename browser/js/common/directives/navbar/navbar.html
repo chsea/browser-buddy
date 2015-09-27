@@ -1,5 +1,7 @@
 <nav class="navbar navbar-static-top">
     <div class="container">
+
+    <div class="displayInline">
         <div class="buddyLogo" ui-sref="selectBuddy">
             <a>BROWSER BUDDY</a>
         </div>
@@ -8,9 +10,11 @@
                 <a ui-sref-active="active" ui-sref="{{ item.state }}">{{ item.label }}</a>
             </li>
         </ul>
+    </div>
         <button ng-show="!user" ui-sref="loginSignup" class="btn login-button">Login</button>
         <div ng-show="user" class="welcome">
             <span>Welcome, {{ user.email }}!</span>
+            <span><a ui-sref="createBuddy">Create Buddy</a></span>
             <a ng-click="logout()">Logout</a>
         </div>
     </div>
