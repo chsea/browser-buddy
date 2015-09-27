@@ -1,3 +1,4 @@
+<!-- dropdown menu for buddy selection -->
 <section>
   <form ng-submit="chooseBuddy()">
  		<select placeholder="Buddies" ng-model="buddy" name="buddy">
@@ -8,3 +9,20 @@
 		</div>
 	</form>
 </section>
+
+<!-- display all buddies, click to chat -->
+ <div class="row">
+    <div class="col-md-4 col-sm-6 col-xs-12 thumb" ng-repeat="buddy in buddies">
+    	<pre>{{buddy}}</pre>
+      <div ui-sref="hangout({id: buddy._id})" class="thumbnail">
+        <a href>
+          <img draggable='true' class="img-responsive" ng-src="{{buddy.defaultPicture}}" alt="">
+        </a>
+        <div class="caption">
+          <h5>{{buddy.name}}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--   end display buddies -->
+  <hr>
