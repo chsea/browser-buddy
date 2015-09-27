@@ -35,35 +35,265 @@ var seedBuddy =[{
       audioUrl: '/audio/omri/duckface.m4a',
     }
   }
-// },
-// {
-//   firstName: 'Joe',
-//   lastName: 'Salty',
-//   picture: 'https://scontent-lga3-1.xx.fbcdn.net/hphotos-xfp1/v/t1.0-9/10959514_10100487453212058_9140311506332778584_n.jpg?oh=b5f675e9062fafd5506b94f80c5c63c3&oe=5696E12B',
-//   responses: {
-//     happy: {text: 'Something happy salty'},
-//     veryHappy: {text: 'Something extra salty'},
-//     sad: {text: 'Salty salty salty'},
-//     verySad: {text: 'Sooooo salty'},
-//     happyConsistent: {text: 'Still salty'},
-//     sadConsistent: {text: 'Extra salty'},
-//     duckFace: {text: 'What a salty duck face'}
-//   }
-// },
-// {
-//   firstName: 'Patrick',
-//   lastName: 'The Dog',
-//   picture: 'http://a57.foxnews.com/global.fncstatic.com/static/managed/img/fn2/feeds/LiveScience/876/493/dog-bacteria.jpg?ve=1&tl=1',
-//   responses: {
-//     happy: {text: 'Woof'},
-//     veryHappy: {text: 'Woof'},
-//     sad: {text: 'Woof'},
-//     verySad: {text: 'Woof'},
-//     happyConsistent: {text: 'Woof'},
-//     sadConsistent: {text: 'Woof'},
-//     duckFace: {text: 'Woof'}
-//   }
-}];
+},
+
+{
+  name: 'Joe',
+  defaultPicture: '/images/joe/default.jpg',
+  responses: {
+    happy: {
+      text: 'insert happy response',
+      pictureUrl: '/images/joe/happy.jpg',
+      audioUrl: '/audio/omri/happy.m4a',
+    },
+    veryHappy: {
+      text: 'Insert very happy response',
+      pictureUrl: '/images/joe/veryhappy.jpg',
+      audioUrl: '/audio/omri/veryhappy.m4a',
+    },
+    sad: {
+      text: 'Instert sad response',
+      pictureUrl: '/images/joe/sad.jpg',
+      audioUrl: '/audio/omri/sad.m4a',
+    },
+    verySad: {
+      text: 'Insert very sad response',
+      pictureUrl: '/images/joe/verysad.jpg',
+      audioUrl: '/audio/omri/verysad.m4a',
+    },
+    duckFace: {
+      text: 'Insert duckface response.',
+      pictureUrl: '/images/joe/duckface.jpg',
+      audioUrl: '/audio/omri/duckface.m4a',
+    }
+  }
+},
+
+{
+  name: 'Zeke',
+  defaultPicture: '/images/zeke/default.jpg',
+  responses: {
+    happy: {
+      text: 'insert happy response',
+      pictureUrl: '/images/zeke/happy.jpg',
+      audioUrl: '/audio/omri/happy.m4a',
+    },
+    veryHappy: {
+      text: 'Insert very happy response',
+      pictureUrl: '/images/zeke/veryhappy.jpg',
+      audioUrl: '/audio/omri/veryhappy.m4a',
+    },
+    sad: {
+      text: 'Instert sad response',
+      pictureUrl: '/images/zeke/sad.jpg',
+      audioUrl: '/audio/omri/sad.m4a',
+    },
+    verySad: {
+      text: 'Insert very sad response',
+      pictureUrl: '/images/zeke/verysad.jpg',
+      audioUrl: '/audio/omri/verysad.m4a',
+    },
+    duckFace: {
+      text: 'Insert duckface response.',
+      pictureUrl: '/images/zeke/duckface.jpg',
+      audioUrl: '/audio/omri/duckface.m4a',
+    }
+  }
+},
+
+{
+  name: 'Gabe',
+  defaultPicture: '/images/gabe/default.jpg',
+  responses: {
+    happy: {
+      text: 'insert happy response',
+      pictureUrl: '/images/gabe/happy.jpg',
+      audioUrl: '/audio/omri/happy.m4a',
+    },
+    veryHappy: {
+      text: 'Insert very happy response',
+      pictureUrl: '/images/gabe/veryhappy.jpg',
+      audioUrl: '/audio/omri/veryhappy.m4a',
+    },
+    sad: {
+      text: 'Instert sad response',
+      pictureUrl: '/images/gabe/sad.jpg',
+      audioUrl: '/audio/omri/sad.m4a',
+    },
+    verySad: {
+      text: 'Insert very sad response',
+      pictureUrl: '/images/gabe/verysad.jpg',
+      audioUrl: '/audio/omri/verysad.m4a',
+    },
+    duckFace: {
+      text: 'Insert duckface response.',
+      pictureUrl: '/images/gabe/duckface.jpg',
+      audioUrl: '/audio/omri/duckface.m4a',
+    }
+  }
+},
+
+{
+  name: 'Chel',
+  defaultPicture: '/images/chel/default.jpg',
+  responses: {
+    happy: {
+      text: 'insert happy response',
+      pictureUrl: '/images/chel/happy.jpg',
+      audioUrl: '/audio/omri/happy.m4a',
+    },
+    veryHappy: {
+      text: 'Insert very happy response',
+      pictureUrl: '/images/chel/veryhappy.jpg',
+      audioUrl: '/audio/omri/veryhappy.m4a',
+    },
+    sad: {
+      text: 'Instert sad response',
+      pictureUrl: '/images/chel/sad.jpg',
+      audioUrl: '/audio/omri/sad.m4a',
+    },
+    verySad: {
+      text: 'Insert very sad response',
+      pictureUrl: '/images/chel/verysad.jpg',
+      audioUrl: '/audio/omri/verysad.m4a',
+    },
+    duckFace: {
+      text: 'Insert duckface response.',
+      pictureUrl: '/images/chel/duckface.jpg',
+      audioUrl: '/audio/omri/duckface.m4a',
+    }
+  }
+},
+
+{
+  name: 'Emily',
+  defaultPicture: '/images/emily/default.jpg',
+  responses: {
+    happy: {
+      text: 'Backstreet\'s Back!!',
+      pictureUrl: '/images/emily/happy.jpg',
+      audioUrl: '/audio/omri/happy.m4a',
+    },
+    veryHappy: {
+      text: 'I Want It That Way',
+      pictureUrl: '/images/emily/veryhappy.jpg',
+      audioUrl: '/audio/omri/veryhappy.m4a',
+    },
+    sad: {
+      text: 'Quit Playing Game With My Heart',
+      pictureUrl: '/images/emily/sad.jpg',
+      audioUrl: '/audio/omri/sad.m4a',
+    },
+    verySad: {
+      text: 'Show Me The Meaning Of Being Lonely',
+      pictureUrl: '/images/emily/verysad.jpg',
+      audioUrl: '/audio/omri/verysad.m4a',
+    },
+    duckFace: {
+      text: 'Quack',
+      pictureUrl: '/images/emily/duckface.jpg',
+      audioUrl: '/audio/omri/duckface.m4a',
+    }
+  }
+},
+
+{
+  name: 'Jon',
+  defaultPicture: '/images/jon/default.jpg',
+  responses: {
+    happy: {
+      text: 'insert happy response',
+      pictureUrl: '/images/jon/happy.jpg',
+      audioUrl: '/audio/omri/happy.m4a',
+    },
+    veryHappy: {
+      text: 'Insert very happy response',
+      pictureUrl: '/images/jon/veryhappy.jpg',
+      audioUrl: '/audio/omri/veryhappy.m4a',
+    },
+    sad: {
+      text: 'Instert sad response',
+      pictureUrl: '/images/jon/sad.jpg',
+      audioUrl: '/audio/omri/sad.m4a',
+    },
+    verySad: {
+      text: 'Insert very sad response',
+      pictureUrl: '/images/jon/verysad.jpg',
+      audioUrl: '/audio/omri/verysad.m4a',
+    },
+    duckFace: {
+      text: 'Insert duckface response.',
+      pictureUrl: '/images/jon/duckface.jpg',
+      audioUrl: '/audio/omri/duckface.m4a',
+    }
+  }
+},
+
+{
+  name: 'Beckylee',
+  defaultPicture: '/images/beckylee/default.jpg',
+  responses: {
+    happy: {
+      text: 'insert happy response',
+      pictureUrl: '/images/beckylee/happy.jpg',
+      audioUrl: '/audio/omri/happy.m4a',
+    },
+    veryHappy: {
+      text: 'Insert very happy response',
+      pictureUrl: '/images/beckylee/veryhappy.jpg',
+      audioUrl: '/audio/omri/veryhappy.m4a',
+    },
+    sad: {
+      text: 'Instert sad response',
+      pictureUrl: '/images/beckylee/sad.jpg',
+      audioUrl: '/audio/omri/sad.m4a',
+    },
+    verySad: {
+      text: 'Insert very sad response',
+      pictureUrl: '/images/beckylee/verysad.jpg',
+      audioUrl: '/audio/omri/verysad.m4a',
+    },
+    duckFace: {
+      text: 'Insert duckface response.',
+      pictureUrl: '/images/beckylee/duckface.jpg',
+      audioUrl: '/audio/omri/duckface.m4a',
+    }
+  }
+},
+
+{
+  name: 'Dan',
+  defaultPicture: '/images/dan/default.jpg',
+  responses: {
+    happy: {
+      text: 'insert happy response',
+      pictureUrl: '/images/dan/happy.jpg',
+      audioUrl: '/audio/omri/happy.m4a',
+    },
+    veryHappy: {
+      text: 'Insert very happy response',
+      pictureUrl: '/images/dan/veryhappy.jpg',
+      audioUrl: '/audio/omri/veryhappy.m4a',
+    },
+    sad: {
+      text: 'Instert sad response',
+      pictureUrl: '/images/dan/sad.jpg',
+      audioUrl: '/audio/omri/sad.m4a',
+    },
+    verySad: {
+      text: 'Insert very sad response',
+      pictureUrl: '/images/dan/verysad.jpg',
+      audioUrl: '/audio/omri/verysad.m4a',
+    },
+    duckFace: {
+      text: 'Insert duckface response.',
+      pictureUrl: '/images/dan/duckface.jpg',
+      audioUrl: '/audio/omri/duckface.m4a',
+    }
+  }
+}
+
+];
 
 connectToDb.then(function() {
   var saveBuddies;
