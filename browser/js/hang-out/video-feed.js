@@ -2,10 +2,11 @@ app.directive('videoFeed', function(EmotionResponseFactory) {
   return {
     restrict: 'E',
     templateUrl: 'js/hang-out/video-feed.html',
-    link: (scope, e, a) => {
+    link: (scope) => {
       var vid = document.getElementById('videoel');
       var overlay = document.getElementById('overlay');
       var overlayCC = overlay.getContext('2d');
+      var vidStream;
 
       function enablestart() {
         var startbutton = document.getElementById('startbutton');
@@ -31,6 +32,7 @@ app.directive('videoFeed', function(EmotionResponseFactory) {
             vid.src = (window.URL && window.URL.createObjectURL(stream)) || stream;
           }
           vid.play();
+          vidStream = stream;
         }, function() {
           //insertAltVideo(vid);
           alert("There was some problem trying to fetch video from your webcam. If you have a webcam, please make sure to accept when the browser asks for access to your webcam.");
@@ -57,6 +59,8 @@ app.directive('videoFeed', function(EmotionResponseFactory) {
         // start loop to draw face
         drawLoop();
       };
+
+      scope.stopVideo = () => vidStream.stop();
       scope.val = null;
       scope.emotion = null;
       scope.lastChanged = new Date();
@@ -82,8 +86,6 @@ app.directive('videoFeed', function(EmotionResponseFactory) {
           }
         }
       }
-
-      scope.hi = "hi";
 
       var eClassifier = new emotionClassifier();
       eClassifier.init(emotionModel);
