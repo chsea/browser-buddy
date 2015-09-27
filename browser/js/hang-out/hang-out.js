@@ -28,6 +28,5 @@ app.config(function ($stateProvider) {
 	$scope.chooseBuddy = function(){
 		buddyId = $scope.buddy;
     currentBuddy = _.find(buddies, (buddy) => buddy._id == buddyId);
-    console.log(`hi ${currentBuddy.firstName}`);
   };
 });
