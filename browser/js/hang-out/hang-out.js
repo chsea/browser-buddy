@@ -1,12 +1,9 @@
 app.config(function ($stateProvider) {
-  $stateProvider.state('home', {
+  $stateProvider.state('hangOut', {
     url: '/',
-    templateUrl: 'js/home/home.html',
+    templateUrl: 'js/hang-out/hang-out.html',
     controller: 'MainController',
     resolve: {
-    	theBuddy: function(BuddyFactory){
-    		return BuddyFactory.getBuddies();
-    	},
       buddies: (Buddy) => Buddy.findAll()
     }
   });

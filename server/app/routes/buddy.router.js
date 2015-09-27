@@ -19,9 +19,9 @@ router.param('id', function(req, res, next, id) {
 
 //GET all buddies from db
 router.get('/', function(req, res, next){
-  Buddy.find().exec()
+  Buddy.find(req.query).exec()
     .then(function(buddies){
-      res.status(200).json(buddies)
+      res.status(200).json(buddies);
     })
     .then(null, next);
 });
@@ -35,28 +35,26 @@ router.get('/:id', function(req, res, next){
 router.post('/', function(req, res, next){
   Buddy.create(req.body)
     .then(function(newBuddy){
-      res.json(newBuddy)
+      res.json(newBuddy);
     })
     .then(null, next);
 });
 
 //UPDATE a specific buddy
 router.put('/:id', function(req, res, next){
-  for (var i in req.body){
-    req.requestedBuddy[i] = req.body[i];
-  };
+  _.merge(req.requestedBuddy, req.body);
   return req.requestedBuddy.save()
     .then(function(savedBuddy){
-      res.json(savedBuddy)
+      res.json(savedBuddy);
     })
     .then(null, next);
-})
+});
 
 //DELETE a specific buddy
 router.delete('/:id', function(req, res, next){
   req.requestedBuddy.remove()
     .then(function(){
-      res.sendStatus(204)
+      res.sendStatus(204).send('Buddy deleted!');
     })
-    .then(null, next)
-})
+    .then(null, next);
+});

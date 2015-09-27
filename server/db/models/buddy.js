@@ -1,53 +1,42 @@
 'use strict';
 var mongoose = require('mongoose');
 
-//will add defaults for images and responses
-
 var schema = new mongoose.Schema({
-    firstName: {
-        type: String,
-        required: true
+  name: {
+    type: String,
+    required: true
+  },
+  defaultPicture: {
+    type: String,
+    required: true
+  },
+  responses: {
+    happy: {
+      text: String,
+      audioUrl: String,
+      pictureUrl: String
     },
-    lastName: {
-        type: String
+    veryHappy: {
+      text: String,
+      audioUrl: String,
+      pictureUrl: String
     },
-    picture: {
-        sad: String,
-        happy: String
+    sad: {
+      text: String,
+      audioUrl: String,
+      pictureUrl: String
     },
-    responses: {
-        happy: {
-            text: String,
-            url: String
-        },
-        veryHappy: {
-            text: String,
-            url: String
-        },
-        sad: {
-            text: String,
-            url: String
-        },
-        verySad: {
-            text: String,
-            url: String
-        },
-        happyConsistent: {
-            text: String,
-            url: String
-        },
-        sadConsistent: {
-            text: String,
-            url: String
-        },
-        duckFace: {
-            text: String,
-            url: String
-        }
-
+    verySad: {
+      text: String,
+      audioUrl: String,
+      pictureUrl: String
+    },
+    duckFace: {
+      text: String,
+      audioUrl: String,
+      pictureUrl: String
     }
+  }
 });
-
-
 
 mongoose.model('Buddy', schema);
