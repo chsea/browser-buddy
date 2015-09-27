@@ -8,6 +8,9 @@ app.directive('hangout', function(EmotionResponseFactory, $http) {
       var overlayCC = overlay.getContext('2d');
       var vidStream;
 
+      scope.imgSrc = scope.buddy.defaultPicture;
+      scope.buddyResponse = "Hello!"
+
       var getStream = () => {
         navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
         window.URL = window.URL || window.webkitURL || window.msURL || window.mozURL;
@@ -23,6 +26,7 @@ app.directive('hangout', function(EmotionResponseFactory, $http) {
           });
         }
       };
+
 
       /*********** setup of emotion detection *************/
       var ctrack = new clm.tracker({useWebGL: true});
@@ -83,6 +87,7 @@ app.directive('hangout', function(EmotionResponseFactory, $http) {
             }
           } else {
             scope.imgSrc = scope.buddy.defaultPicture;
+            scope.buddyResponse = "Hello!"
           }
         });
       }
