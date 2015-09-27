@@ -16,6 +16,8 @@ app.directive('hangout', function(EmotionResponseFactory) {
           navigator.getUserMedia({video: true}, function(stream) {
             vid.src = (window.URL && window.URL.createObjectURL(stream)) || stream;
             vidStream = stream;
+            getEmotionLoop = setInterval(getEmotion);
+            drawLoop();
           }, function() {
             alert("Let me record you!");
           });
@@ -25,62 +27,64 @@ app.directive('hangout', function(EmotionResponseFactory) {
       /*********** setup of emotion detection *************/
       var ctrack = new clm.tracker({useWebGL: true});
       ctrack.init(pModel);
-      var eClassifier = new emotionClassifier();
-      eClassifier.init(emotionModel);
-      var emotionData = eClassifier.getBlank();
-      var emotionLoopInterval;
+      var ec = new emotionClassifier();
+      ec.init(emotionModel);
+      var emotionData = ec.getBlank();
+      var cp, er, getEmotionLoop, setEmotionResponseLoop;
 
       scope.startVideo = () => {
         getStream();
         vid.play();
         ctrack.start(vid);
         $('#overlay').show();
-        drawLoop();
-        emotionLoopInterval = setInterval(emotionLoop, 3000);
       };
 
-      var can = document.getElementById('snapshot');
       scope.stopVideo = () => {
         $('#overlay').hide();
         ctrack.stop();
-        clearInterval(emotionLoopInterval);
+        clearInterval(getEmotionLoop);
+        clearInterval(setEmotionResponseLoop);
         vidStream.getVideoTracks()[0].stop();
       };
 
-      var drawLoop = () => {
+      function drawLoop() {
         requestAnimFrame(drawLoop);
         overlayCC.clearRect(0, 0, 400, 300);
         if (ctrack.getCurrentPosition()) ctrack.draw(overlay);
-      };
+      }
 
-      var emotionLoop = () => {
-        var cp = ctrack.getCurrentParameters();
-        var eResponse = eClassifier.meanPredict(cp);
-        if (eResponse) {
-          console.log(eResponse[3].value);
-          // EmotionResponseFactory.setEmotion(eResponse[3].value, eResponse[1].value);
-          // setInterval(() => {
-          //   // scope.$digest();
-          //   scope.emotion = EmotionResponseFactory.howDoYouFeel();
-          // }, 500);
-          // can.getContext("2d").drawImage(vid, 0, 0, 400, 300, 0, 0, 400, 300);
-          // var img = can.toDataURL();
-          // $('#duck').attr('src', img);
-          // var response;
-          // setInterval(() => scope.$apply(() => {
-          //   response = scope.buddy.responses[$scope.emotion];
-          //   if (response) {
-          //   	scope.buddyResponse = response.text;
-          //     scope.imgSrc = response.pictureUrl;
-          //     var speak = new Howl({
-          //       urls: [response.audioUrl]
-          //     }).play();
-          //   } else {
-          //     scope.imgSrc = buddy.defaultPicture;
-          //   }
-          // }), 3000);
+      function getEmotion() {
+        cp = ctrack.getCurrentParameters();
+        er = ec.meanPredict(cp);
+        if (er && !setEmotionResponseLoop) {
+          setEmotionResponseLoop = setInterval(setEmotionResponse, 3000);
         }
-      };
+      }
+
+      function setEmotionResponse() {
+        EmotionResponseFactory.setEmotion(er[3].value, er[1].value);
+        let emotion = EmotionResponseFactory.howDoYouFeel();
+        console.log(emotion);
+        scope.$apply(() => {
+          let response = scope.buddy.responses[emotion];
+          if (response) {
+          	scope.buddyResponse = response.text;
+            scope.imgSrc = response.pictureUrl;
+            var speak = new Howl({
+              urls: [response.audioUrl]
+            }).play();
+
+            if (emotion === 'duckFace') {
+              let can = document.getElementById('snapshot');
+              can.getContext("2d").drawImage(vid, 0, 0, 400, 300, 0, 0, 400, 300);
+              var img = can.toDataURL();
+              $('#duck').attr('src', img);
+            }
+          } else {
+            scope.imgSrc = scope.buddy.defaultPicture;
+          }
+        });
+      }
     }
   };
 });
