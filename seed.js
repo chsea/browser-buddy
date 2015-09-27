@@ -318,6 +318,35 @@ var seedBuddy =[{
       audioUrl: '/audio/dan/duckface.m4a',
     }
   }
+},
+{
+  name: 'Luke',
+  defaultPicture: '/images/luke/default.jpg',
+  greeting: '/audio/luke/greeting.mp3',
+  description: 'Delightful',
+  role: 'Student',
+  responses: {
+    happy: {
+      text: 'insert happy response',
+      pictureUrl: '/images/luke/happy.jpg'
+    },
+    veryHappy: {
+      text: 'Insert very happy response',
+      pictureUrl: '/images/luke/veryhappy.jpg'
+    },
+    sad: {
+      text: 'Instert sad response',
+      pictureUrl: '/images/luke/sad.jpg'
+    },
+    verySad: {
+      text: 'Insert very sad response',
+      pictureUrl: '/images/luke/verysad.jpg'
+    },
+    duckFace: {
+      text: 'Insert duckface response.',
+      pictureUrl: '/images/luke/duckface.jpg'
+    }
+  }
 }];
 
 connectToDb.then(function() {
