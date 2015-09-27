@@ -16,9 +16,13 @@ navbar {
     padding-top: 20px;
   }
 
+  .displayInline{
+    display: inline-block;
+
+  }
+
   a {
     color: white;
-
     font-size: 16px;
   }
 
@@ -50,6 +54,7 @@ navbar {
   }
 
   .nav > li > a {
+    padding-left: 100px;
     cursor: pointer;
     transition: color 0.2s;
     &.active {
@@ -77,22 +82,39 @@ navbar {
 
   .welcome {
     float: right;
-    margin-top: 5px;
+    margin-top: 15px;
   
 }
 
   .welcome span{
-    color: blue;
+    color: white;
     font-family: 'Open Sans';
+    font-size: 14px;
     margin-right: 10px;
 
   }
 
+  .welcome span a{
+    color: white;
+    font-family: 'Open Sans';
+    font-size: 14px;
+    margin-right: 10px;
+    &:hover{
+      color: #ff4f57;
+    }
+
+  }
+
   .welcome a {
-      color: #f31214;
+      color: white;
       cursor: pointer;
       font-family: 'Open Sans';
+      font-size: 14px;
       margin-left: 10px;
+      &:hover{
+      color: #ff4f57;
+    }
+
     }
 
 }
