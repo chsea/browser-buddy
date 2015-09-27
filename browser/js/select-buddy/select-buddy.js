@@ -13,4 +13,11 @@ app.config(function ($stateProvider) {
     $scope.currentBuddy = _.find(buddies, (buddy) => buddy._id == $scope.buddy);
     $state.go('hangout', {id: $scope.buddy});
   };
+
+  $scope.sayGreeting = function(buddy){
+    $scope.greeter = _.find($scope.buddies, {_id: buddy._id}, $scope.greeter)
+      var greet = new Howl({urls: [$scope.greeter.greeting]
+        }).play();
+  };
+  
 });

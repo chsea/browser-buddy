@@ -15,12 +15,12 @@
  <div class="row">
     <div class="col-md-4 col-sm-6 col-xs-12 thumb" ng-repeat="buddy in buddies">
     	<!-- <pre>{{buddy}}</pre> -->
-      <div ui-sref="hangout({id: buddy._id})" class="thumbnail">
-        <a href>
+      <div class="thumbnail">
+        <a href ng-click="sayGreeting(buddy)">
           <img draggable='true' class="img-responsive rotate90 {{buddy.name}}" ng-src="{{buddy.defaultPicture}}" alt="">
         </a>
         <div class="caption">
-          <h5>{{buddy.name}}</h5>
+          <h5 ui-sref="hangout({id: buddy._id})">{{buddy.name}} </h5>
         </div>
       </div>
     </div>

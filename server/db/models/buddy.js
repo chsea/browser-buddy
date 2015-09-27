@@ -10,6 +10,9 @@ var schema = new mongoose.Schema({
     type: String,
     required: true
   },
+  greeting: {
+    type: String
+  },
   responses: {
     happy: {
       text: String,
