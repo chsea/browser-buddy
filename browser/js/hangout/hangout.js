@@ -9,7 +9,7 @@ app.directive('hangout', function(EmotionResponseFactory, $http) {
       var vidStream;
 
       scope.imgSrc = scope.buddy.defaultPicture;
-      scope.buddyResponse = "Hello!"
+      scope.buddyResponse = "Hello!";
 
       var getStream = () => {
         navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
