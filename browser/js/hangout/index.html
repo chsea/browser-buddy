@@ -31,6 +31,10 @@
 			}
 
   </style>
-  <h2>Welcome! You are chatting with {{buddy.name}}.</h2>
+  <span class="startChat"><h2>Welcome! You are chatting with {{buddy.name}}.</h2> <div class="vidControlButtons">
+  <input type="button" ng-show="!videoOn" ng-click="startVideo()" value="START" />
+  <input type="button" ng-show="videoOn" ng-click="stopVideo()" value="STOP" />
+</div></span>
+  
   <hangout></hangout>
 </section>
