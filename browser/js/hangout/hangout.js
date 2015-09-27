@@ -33,7 +33,7 @@ app.directive('hangout', function(EmotionResponseFactory, $http) {
       var ec = new emotionClassifier();
       ec.init(emotionModel);
       var emotionData = ec.getBlank();
-      var cp, er, getEmotionLoop, setEmotionResponseLoop;
+      var cp, er, getEmotionLoop, emotionLoopStart = false;
       scope.videoOn = false;
 
       scope.startVideo = () => {
@@ -50,7 +50,7 @@ app.directive('hangout', function(EmotionResponseFactory, $http) {
         ctrack.stop();
         vidStream.getVideoTracks()[0].stop();
         clearInterval(getEmotionLoop);
-        clearInterval(setEmotionResponseLoop);
+        emotionLoopStart = false;
       };
 
       function drawLoop() {
@@ -62,27 +62,33 @@ app.directive('hangout', function(EmotionResponseFactory, $http) {
       function getEmotion() {
         cp = ctrack.getCurrentParameters();
         er = ec.meanPredict(cp);
-        if (er && !setEmotionResponseLoop) {
-          setEmotionResponseLoop = setInterval(setEmotionResponse, 3000);
+        if (er && !emotionLoopStart) {
+          setEmotionResponse();
+          emotionLoopStart = true;
         }
       }
 
       function setEmotionResponse() {
         EmotionResponseFactory.setEmotion(er[3].value, er[1].value);
         let emotion = EmotionResponseFactory.howDoYouFeel();
-        console.log(emotion);
         scope.$apply(() => {
           let response = scope.buddy.responses[emotion];
           if (response) {
           	scope.buddyResponse = response.text;
             scope.imgSrc = response.pictureUrl;
-            var speak = new Howl({
-              urls: [response.audioUrl]
-            }).play();
 
+            if(response.audioUrl) {
+              let speakEnd = () => {
+                if (scope.videoOn) setTimeout(setEmotionResponse, 500);
+              };
+              let speak = new Howl({
+                urls: [response.audioUrl],
+                onend: speakEnd
+              }).play();
+            }
             if (emotion === 'duckFace') {
               let can = document.getElementById('snapshot');
-              can.getContext("2d").drawImage(vid, 0, 0, 400, 300, 0, 0, 400, 300);
+              can.getContext("2d").drawImage(vid, 0, 0, 533, 400, 0, 0, 533, 400);
               let img = can.toDataURL();
               $http.post('/api/duckface', {name: 'duckface', data: img})
               .then(() => console.log('uploaded!'));
@@ -90,6 +96,7 @@ app.directive('hangout', function(EmotionResponseFactory, $http) {
           } else {
             scope.imgSrc = scope.buddy.defaultPicture;
             scope.buddyResponse = "Hello!";
+            if (scope.videoOn) setTimeout(setEmotionResponse, 500);
           }
         });
       }
