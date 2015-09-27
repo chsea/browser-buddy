@@ -8,6 +8,7 @@ var schema = new mongoose.Schema({
   },
   defaultPicture: {
     type: String,
+    default: '/images/luke/default.jpg',
     required: true
   },
   greeting: {

@@ -2,6 +2,8 @@
 var router = require('express').Router();
 var mongoose = require('mongoose');
 var _ = require('lodash');
+var fs = require('fs');
+var request = require('request');
 
 module.exports = router;
 
