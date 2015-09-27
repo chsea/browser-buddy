@@ -50,27 +50,27 @@ var seedBuddy =[{
     happy: {
       text: 'insert happy response',
       pictureUrl: '/images/joe/happy.jpg',
-      audioUrl: '/audio/omri/happy.m4a',
+      audioUrl: '/audio/joe/happy.m4a',
     },
     veryHappy: {
       text: 'Insert very happy response',
       pictureUrl: '/images/joe/veryhappy.jpg',
-      audioUrl: '/audio/omri/veryhappy.m4a',
+      audioUrl: '/audio/joe/veryhappy.m4a',
     },
     sad: {
       text: 'Instert sad response',
       pictureUrl: '/images/joe/sad.jpg',
-      audioUrl: '/audio/omri/sad.m4a',
+      audioUrl: '/audio/joe/sad.m4a',
     },
     verySad: {
       text: 'Insert very sad response',
       pictureUrl: '/images/joe/verysad.jpg',
-      audioUrl: '/audio/omri/verysad.m4a',
+      audioUrl: '/audio/joe/verysad.m4a',
     },
     duckFace: {
       text: 'Insert duckface response.',
       pictureUrl: '/images/joe/duckface.jpg',
-      audioUrl: '/audio/omri/duckface.m4a',
+      audioUrl: '/audio/joe/duckface.m4a',
     }
   }
 },
@@ -85,27 +85,27 @@ var seedBuddy =[{
     happy: {
       text: 'insert happy response',
       pictureUrl: '/images/zeke/happy.jpg',
-      audioUrl: '/audio/omri/happy.m4a',
+      audioUrl: '/audio/zeke/happy.m4a',
     },
     veryHappy: {
       text: 'Insert very happy response',
       pictureUrl: '/images/zeke/veryhappy.jpg',
-      audioUrl: '/audio/omri/veryhappy.m4a',
+      audioUrl: '/audio/zeke/veryhappy.m4a',
     },
     sad: {
       text: 'Instert sad response',
       pictureUrl: '/images/zeke/sad.jpg',
-      audioUrl: '/audio/omri/sad.m4a',
+      audioUrl: '/audio/zeke/sad.m4a',
     },
     verySad: {
       text: 'Insert very sad response',
       pictureUrl: '/images/zeke/verysad.jpg',
-      audioUrl: '/audio/omri/verysad.m4a',
+      audioUrl: '/audio/zeke/verysad.m4a',
     },
     duckFace: {
       text: 'Insert duckface response.',
       pictureUrl: '/images/zeke/duckface.jpg',
-      audioUrl: '/audio/omri/duckface.m4a',
+      audioUrl: '/audio/zeke/duckface.m4a',
     }
   }
 },
@@ -120,27 +120,27 @@ var seedBuddy =[{
     happy: {
       text: 'insert happy response',
       pictureUrl: '/images/gabe/happy.jpg',
-      audioUrl: '/audio/omri/happy.m4a',
+      audioUrl: '/audio/gabe/happy.m4a',
     },
     veryHappy: {
       text: 'Insert very happy response',
       pictureUrl: '/images/gabe/veryhappy.jpg',
-      audioUrl: '/audio/omri/veryhappy.m4a',
+      audioUrl: '/audio/gabe/veryhappy.m4a',
     },
     sad: {
       text: 'Instert sad response',
       pictureUrl: '/images/gabe/sad.jpg',
-      audioUrl: '/audio/omri/sad.m4a',
+      audioUrl: '/audio/gabe/sad.m4a',
     },
     verySad: {
       text: 'Insert very sad response',
       pictureUrl: '/images/gabe/verysad.jpg',
-      audioUrl: '/audio/omri/verysad.m4a',
+      audioUrl: '/audio/gabe/verysad.m4a',
     },
     duckFace: {
       text: 'Insert duckface response.',
       pictureUrl: '/images/gabe/duckface.jpg',
-      audioUrl: '/audio/omri/duckface.m4a',
+      audioUrl: '/audio/gabe/duckface.m4a',
     }
   }
 },
@@ -155,27 +155,27 @@ var seedBuddy =[{
     happy: {
       text: 'insert happy response',
       pictureUrl: '/images/chel/happy.jpg',
-      audioUrl: '/audio/omri/happy.m4a',
+      audioUrl: '/audio/chel/happy.m4a',
     },
     veryHappy: {
       text: 'Insert very happy response',
       pictureUrl: '/images/chel/veryhappy.jpg',
-      audioUrl: '/audio/omri/veryhappy.m4a',
+      audioUrl: '/audio/chel/veryhappy.m4a',
     },
     sad: {
       text: 'Instert sad response',
       pictureUrl: '/images/chel/sad.jpg',
-      audioUrl: '/audio/omri/sad.m4a',
+      audioUrl: '/audio/chel/sad.m4a',
     },
     verySad: {
       text: 'Insert very sad response',
       pictureUrl: '/images/chel/verysad.jpg',
-      audioUrl: '/audio/omri/verysad.m4a',
+      audioUrl: '/audio/chel/verysad.m4a',
     },
     duckFace: {
       text: 'Insert duckface response.',
       pictureUrl: '/images/chel/duckface.jpg',
-      audioUrl: '/audio/omri/duckface.m4a',
+      audioUrl: '/audio/chel/duckface.m4a',
     }
   }
 },
@@ -190,27 +190,27 @@ var seedBuddy =[{
     happy: {
       text: 'Backstreet\'s Back!!',
       pictureUrl: '/images/emily/happy.jpg',
-      audioUrl: '/audio/omri/happy.m4a',
+      audioUrl: '/audio/emily/happy.m4a',
     },
     veryHappy: {
       text: 'I Want It That Way',
       pictureUrl: '/images/emily/veryhappy.jpg',
-      audioUrl: '/audio/omri/veryhappy.m4a',
+      audioUrl: '/audio/emily/veryhappy.m4a',
     },
     sad: {
       text: 'Quit Playing Game With My Heart',
       pictureUrl: '/images/emily/sad.jpg',
-      audioUrl: '/audio/omri/sad.m4a',
+      audioUrl: '/audio/emily/sad.m4a',
     },
     verySad: {
       text: 'Show Me The Meaning Of Being Lonely',
       pictureUrl: '/images/emily/verysad.jpg',
-      audioUrl: '/audio/omri/verysad.m4a',
+      audioUrl: '/audio/emily/verysad.m4a',
     },
     duckFace: {
       text: 'Quack',
       pictureUrl: '/images/emily/duckface.jpg',
-      audioUrl: '/audio/omri/duckface.m4a',
+      audioUrl: '/audio/emily/duckface.m4a',
     }
   }
 },
@@ -225,27 +225,27 @@ var seedBuddy =[{
     happy: {
       text: 'insert happy response',
       pictureUrl: '/images/jon/happy.jpg',
-      audioUrl: '/audio/omri/happy.m4a',
+      audioUrl: '/audio/jon/happy.m4a',
     },
     veryHappy: {
       text: 'Insert very happy response',
       pictureUrl: '/images/jon/veryhappy.jpg',
-      audioUrl: '/audio/omri/veryhappy.m4a',
+      audioUrl: '/audio/jon/veryhappy.m4a',
     },
     sad: {
       text: 'Instert sad response',
       pictureUrl: '/images/jon/sad.jpg',
-      audioUrl: '/audio/omri/sad.m4a',
+      audioUrl: '/audio/jon/sad.m4a',
     },
     verySad: {
       text: 'Insert very sad response',
       pictureUrl: '/images/jon/verysad.jpg',
-      audioUrl: '/audio/omri/verysad.m4a',
+      audioUrl: '/audio/jon/verysad.m4a',
     },
     duckFace: {
       text: 'Insert duckface response.',
       pictureUrl: '/images/jon/duckface.jpg',
-      audioUrl: '/audio/omri/duckface.m4a',
+      audioUrl: '/audio/jon/duckface.m4a',
     }
   }
 },
@@ -260,27 +260,27 @@ var seedBuddy =[{
     happy: {
       text: 'insert happy response',
       pictureUrl: '/images/beckylee/happy.jpg',
-      audioUrl: '/audio/omri/happy.m4a',
+      audioUrl: '/audio/beckylee/happy.m4a',
     },
     veryHappy: {
       text: 'Insert very happy response',
       pictureUrl: '/images/beckylee/veryhappy.jpg',
-      audioUrl: '/audio/omri/veryhappy.m4a',
+      audioUrl: '/audio/beckylee/veryhappy.m4a',
     },
     sad: {
       text: 'Instert sad response',
       pictureUrl: '/images/beckylee/sad.jpg',
-      audioUrl: '/audio/omri/sad.m4a',
+      audioUrl: '/audio/beckylee/sad.m4a',
     },
     verySad: {
       text: 'Insert very sad response',
       pictureUrl: '/images/beckylee/verysad.jpg',
-      audioUrl: '/audio/omri/verysad.m4a',
+      audioUrl: '/audio/beckylee/verysad.m4a',
     },
     duckFace: {
       text: 'Insert duckface response.',
       pictureUrl: '/images/beckylee/duckface.jpg',
-      audioUrl: '/audio/omri/duckface.m4a',
+      audioUrl: '/audio/beckylee/duckface.m4a',
     }
   }
 },
@@ -295,32 +295,30 @@ var seedBuddy =[{
     happy: {
       text: 'insert happy response',
       pictureUrl: '/images/dan/happy.jpg',
-      audioUrl: '/audio/omri/happy.m4a',
+      audioUrl: '/audio/dan/happy.m4a',
     },
     veryHappy: {
       text: 'Insert very happy response',
       pictureUrl: '/images/dan/veryhappy.jpg',
-      audioUrl: '/audio/omri/veryhappy.m4a',
+      audioUrl: '/audio/dan/veryhappy.m4a',
     },
     sad: {
       text: 'Instert sad response',
       pictureUrl: '/images/dan/sad.jpg',
-      audioUrl: '/audio/omri/sad.m4a',
+      audioUrl: '/audio/dan/sad.m4a',
     },
     verySad: {
       text: 'Insert very sad response',
       pictureUrl: '/images/dan/verysad.jpg',
-      audioUrl: '/audio/omri/verysad.m4a',
+      audioUrl: '/audio/dan/verysad.m4a',
     },
     duckFace: {
       text: 'Insert duckface response.',
       pictureUrl: '/images/dan/duckface.jpg',
-      audioUrl: '/audio/omri/duckface.m4a',
+      audioUrl: '/audio/dan/duckface.m4a',
     }
   }
-}
-
-];
+}];
 
 connectToDb.then(function() {
   var saveBuddies;
