@@ -59,6 +59,8 @@ app.directive('videoFeed', function(EmotionResponseFactory) {
         // start loop to draw face
         drawLoop();
       };
+        var can = document.getElementById('snapshot');
+      console.log(can);
 
       scope.stopVideo = () => vidStream.stop();
       scope.val = null;
@@ -84,6 +86,9 @@ app.directive('videoFeed', function(EmotionResponseFactory) {
               scope.lastChanged = new Date();
             //}
           }
+          can.getContext("2d").drawImage(vid, 0, 0, 400, 300, 0, 0, 400, 300);
+          var img = can.toDataURL();
+          $('#duck').attr('src', img);
         }
       }
 

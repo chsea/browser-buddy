@@ -1,20 +1,19 @@
 app.config(function ($stateProvider) {
-  $stateProvider.state('hangOut', {
+  $stateProvider.state('hangout', {
     url: '/hangout',
-    templateUrl: '/js/hang-out/hang-out.html',
-    controller: 'MainController',
+    templateUrl: '/js/hangout/hang-out.html',
+    controller: 'HangoutController',
     resolve: {
       buddies: (Buddy) => Buddy.findAll()
     }
   });
-}).controller('MainController', function($scope, $state, buddies, Buddy, $rootScope){
+}).controller('HangoutController', function($scope, $state, buddies, Buddy, $rootScope){
   var response;
   setInterval(() => $scope.$apply(() => {
     response = currentBuddy ? currentBuddy.responses[$scope.emotion] : null;
     if (response) {
     	$scope.buddyResponse = response.text;
       $scope.imgSrc = response.pictureUrl;
-      console.log(response.audioUrl);
       var speak = new Howl({
         urls: [response.audioUrl]
       }).play();
