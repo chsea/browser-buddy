@@ -27,7 +27,6 @@ app.directive('hangout', function(EmotionResponseFactory, $http) {
         }
       };
 
-
       /*********** setup of emotion detection *************/
       var ctrack = new clm.tracker({useWebGL: true});
       ctrack.init(pModel);
@@ -46,12 +45,12 @@ app.directive('hangout', function(EmotionResponseFactory, $http) {
       };
 
       scope.stopVideo = () => {
-        $('#overlay').hide();
         scope.videoOn = false;
+        $('#overlay').hide();
         ctrack.stop();
+        vidStream.getVideoTracks()[0].stop();
         clearInterval(getEmotionLoop);
         clearInterval(setEmotionResponseLoop);
-        vidStream.getVideoTracks()[0].stop();
       };
 
       function drawLoop() {
@@ -90,7 +89,7 @@ app.directive('hangout', function(EmotionResponseFactory, $http) {
             }
           } else {
             scope.imgSrc = scope.buddy.defaultPicture;
-            scope.buddyResponse = "Hello!"
+            scope.buddyResponse = "Hello!";
           }
         });
       }
