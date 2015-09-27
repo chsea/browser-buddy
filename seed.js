@@ -48,27 +48,27 @@ var seedBuddy =[{
   role: 'Instructor',
   responses: {
     happy: {
-      text: 'insert happy response',
+      text: 'Yeah, that won\'t last long',
       pictureUrl: '/images/joe/happy.jpg',
       audioUrl: '/audio/joe/happy.m4a',
     },
     veryHappy: {
-      text: 'Insert very happy response',
+      text: 'You\'re doing this wrong. There\'s nothing that can make you feel that way',
       pictureUrl: '/images/joe/veryhappy.jpg',
       audioUrl: '/audio/joe/veryhappy.m4a',
     },
     sad: {
-      text: 'Instert sad response',
+      text: 'There you go. That\'s better. That\'s about where you want to be.',
       pictureUrl: '/images/joe/sad.jpg',
       audioUrl: '/audio/joe/sad.m4a',
     },
     verySad: {
-      text: 'Insert very sad response',
+      text: 'You\'ve learned well. Good job',
       pictureUrl: '/images/joe/verysad.jpg',
       audioUrl: '/audio/joe/verysad.m4a',
     },
     duckFace: {
-      text: 'Insert duckface response.',
+      text: 'Oh God...Why are you making that face? That\'s terrible.',
       pictureUrl: '/images/joe/duckface.jpg',
       audioUrl: '/audio/joe/duckface.m4a',
     }
@@ -83,27 +83,27 @@ var seedBuddy =[{
   role: 'Instructor',
   responses: {
     happy: {
-      text: 'insert happy response',
+      text: 'Hmmm :)',
       pictureUrl: '/images/zeke/happy.jpg',
       audioUrl: '/audio/zeke/happy.m4a',
     },
     veryHappy: {
-      text: 'Insert very happy response',
+      text: 'Yay',
       pictureUrl: '/images/zeke/veryhappy.jpg',
       audioUrl: '/audio/zeke/veryhappy.m4a',
     },
     sad: {
-      text: 'Instert sad response',
+      text: 'Hmmmmm... :(',
       pictureUrl: '/images/zeke/sad.jpg',
       audioUrl: '/audio/zeke/sad.m4a',
     },
     verySad: {
-      text: 'Insert very sad response',
+      text: 'Awwww',
       pictureUrl: '/images/zeke/verysad.jpg',
       audioUrl: '/audio/zeke/verysad.m4a',
     },
     duckFace: {
-      text: 'Insert duckface response.',
+      text: 'Quack.',
       pictureUrl: '/images/zeke/duckface.jpg',
       audioUrl: '/audio/zeke/duckface.m4a',
     }
@@ -118,27 +118,27 @@ var seedBuddy =[{
   role: 'Instructor',
   responses: {
     happy: {
-      text: 'insert happy response',
+      text: 'Hey! :)',
       pictureUrl: '/images/gabe/happy.jpg',
       audioUrl: '/audio/gabe/happy.m4a',
     },
     veryHappy: {
-      text: 'Insert very happy response',
+      text: 'Awesome! :D',
       pictureUrl: '/images/gabe/veryhappy.jpg',
       audioUrl: '/audio/gabe/veryhappy.m4a',
     },
     sad: {
-      text: 'Instert sad response',
+      text: 'Awwww :(',
       pictureUrl: '/images/gabe/sad.jpg',
       audioUrl: '/audio/gabe/sad.m4a',
     },
     verySad: {
-      text: 'Insert very sad response',
+      text: 'NoOoOoOo :\'(',
       pictureUrl: '/images/gabe/verysad.jpg',
       audioUrl: '/audio/gabe/verysad.m4a',
     },
     duckFace: {
-      text: 'Insert duckface response.',
+      text: 'Uhhhhhhhh....',
       pictureUrl: '/images/gabe/duckface.jpg',
       audioUrl: '/audio/gabe/duckface.m4a',
     }
@@ -153,27 +153,27 @@ var seedBuddy =[{
   role: 'Student',
   responses: {
     happy: {
-      text: 'insert happy response',
+      text: 'That\'s nice, but...are you still coding?',
       pictureUrl: '/images/chel/happy.jpg',
       audioUrl: '/audio/chel/happy.m4a',
     },
     veryHappy: {
-      text: 'Insert very happy response',
+      text: 'Woah, woah--tone it down a notch!',
       pictureUrl: '/images/chel/veryhappy.jpg',
       audioUrl: '/audio/chel/veryhappy.m4a',
     },
     sad: {
-      text: 'Instert sad response',
+      text: 'Cheer up buddy, uhhhh, there\'s more Angular to write',
       pictureUrl: '/images/chel/sad.jpg',
       audioUrl: '/audio/chel/sad.m4a',
     },
     verySad: {
-      text: 'Insert very sad response',
+      text: 'I feel bad, but, uhhh...that\'s not going to interfere with you gettting your work done, is it?',
       pictureUrl: '/images/chel/verysad.jpg',
       audioUrl: '/audio/chel/verysad.m4a',
     },
     duckFace: {
-      text: 'Insert duckface response.',
+      text: 'Work it, girl.',
       pictureUrl: '/images/chel/duckface.jpg',
       audioUrl: '/audio/chel/duckface.m4a',
     }
@@ -223,27 +223,27 @@ var seedBuddy =[{
   role: 'Student',
   responses: {
     happy: {
-      text: 'insert happy response',
+      text: 'I\'m so glad that we\'re here. Wow, I\'m having such a good time',
       pictureUrl: '/images/jon/happy.jpg',
       audioUrl: '/audio/jon/happy.m4a',
     },
     veryHappy: {
-      text: 'Insert very happy response',
+      text: 'Awww man, this is a good day',
       pictureUrl: '/images/jon/veryhappy.jpg',
       audioUrl: '/audio/jon/veryhappy.m4a',
     },
     sad: {
-      text: 'Instert sad response',
+      text: 'Damn...you know...It\'s just...spiders in the dumpster',
       pictureUrl: '/images/jon/sad.jpg',
       audioUrl: '/audio/jon/sad.m4a',
     },
     verySad: {
-      text: 'Insert very sad response',
+      text: 'I sorry, girl',
       pictureUrl: '/images/jon/verysad.jpg',
       audioUrl: '/audio/jon/verysad.m4a',
     },
     duckFace: {
-      text: 'Insert duckface response.',
+      text: 'Oh wow that\'s a great duckface you got there! Wooow.',
       pictureUrl: '/images/jon/duckface.jpg',
       audioUrl: '/audio/jon/duckface.m4a',
     }
@@ -258,27 +258,27 @@ var seedBuddy =[{
   role: 'Student',
   responses: {
     happy: {
-      text: 'insert happy response',
+      text: 'Yayyy! :)',
       pictureUrl: '/images/beckylee/happy.jpg',
       audioUrl: '/audio/beckylee/happy.m4a',
     },
     veryHappy: {
-      text: 'Insert very happy response',
+      text: 'Woo-Hoo!!! :D',
       pictureUrl: '/images/beckylee/veryhappy.jpg',
       audioUrl: '/audio/beckylee/veryhappy.m4a',
     },
     sad: {
-      text: 'Instert sad response',
+      text: 'Awwww :(',
       pictureUrl: '/images/beckylee/sad.jpg',
       audioUrl: '/audio/beckylee/sad.m4a',
     },
     verySad: {
-      text: 'Insert very sad response',
+      text: 'Noooooo :\'(',
       pictureUrl: '/images/beckylee/verysad.jpg',
       audioUrl: '/audio/beckylee/verysad.m4a',
     },
     duckFace: {
-      text: 'Insert duckface response.',
+      text: 'What is that?',
       pictureUrl: '/images/beckylee/duckface.jpg',
       audioUrl: '/audio/beckylee/duckface.m4a',
     }
@@ -293,27 +293,27 @@ var seedBuddy =[{
   role: 'Student',
   responses: {
     happy: {
-      text: 'insert happy response',
+      text: 'Wow! You look really happy!',
       pictureUrl: '/images/dan/happy.jpg',
       audioUrl: '/audio/dan/happy.m4a',
     },
     veryHappy: {
-      text: 'Insert very happy response',
+      text: 'Holy crap...Why are you so happy?',
       pictureUrl: '/images/dan/veryhappy.jpg',
       audioUrl: '/audio/dan/veryhappy.m4a',
     },
     sad: {
-      text: 'Instert sad response',
+      text: 'You look a little bummed',
       pictureUrl: '/images/dan/sad.jpg',
       audioUrl: '/audio/dan/sad.m4a',
     },
     verySad: {
-      text: 'Insert very sad response',
+      text: 'Wow, you look really sad. You should probably go home',
       pictureUrl: '/images/dan/verysad.jpg',
       audioUrl: '/audio/dan/verysad.m4a',
     },
     duckFace: {
-      text: 'Insert duckface response.',
+      text: 'Uhhh, what is that?',
       pictureUrl: '/images/dan/duckface.jpg',
       audioUrl: '/audio/dan/duckface.m4a',
     }
