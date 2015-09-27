@@ -2,6 +2,9 @@ navbar {
 
   display: block;
   background: white;
+  background-color: #282828;
+  background-color: #CED0CE;
+  background-color: #333333;
   border-bottom: 1px solid black;
   box-shadow: 1px 1px 14px -3px black;
 
@@ -12,14 +15,42 @@ navbar {
   }
 
   fullstack-logo {
+    display: none;
     margin-top: 5px;
     margin-right: 20px;
     width: 40px;
   }
 
   a {
-    color: black;
+    color: white;
     font-size: 16px;
+  }
+
+  .buddyLogo {
+    font-family: 'Rock Salt';
+    margin-top: 20px;
+    margin-bottom: -10px;
+    
+  }
+
+  .buddyLogo a{
+    cursor: pointer;
+    color: white;
+    font-size: 20px;
+    padding-bottom: -10px;
+    text-decoration: none;
+    transition: color 0.2s;
+    &.active {
+      color: darken(#ff4f57, 10%);
+    }
+    &:hover {
+      background: none;
+      color: #ff4f57;
+    }
+    &:focus {
+      background: none;
+    }
+
   }
 
   .nav > li > a {
@@ -39,7 +70,7 @@ navbar {
 
   .login-button {
     float: right;
-    border: 1px solid black;
+    border: 1px solid white;
     margin-top: 10px;
     background: none;
     outline: none !important;
