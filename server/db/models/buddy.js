@@ -13,6 +13,12 @@ var schema = new mongoose.Schema({
   greeting: {
     type: String
   },
+  description: {
+    type: String
+  },
+  role: {
+    type: String
+  },
   responses: {
     happy: {
       text: String,
