@@ -8,7 +8,26 @@ app.config(function ($stateProvider) {
   $scope.happy = '';
 
   $scope.add = () => {
-    Buddy.create({happy: $scope.happy})
-      .then(buddy => console.log('created'));
+    Buddy.create({
+      name: $scope.name,
+      responses: {
+        happy: {
+          text: $scope.happy
+        },
+        sad: {
+          text: $scope.sad
+        },
+        veryHappy: {
+          text: $scope.veryHappy
+        },
+        verySad: {
+          text: $scope.verySad
+        },
+        duckFace: {
+          text: $scope.duckFace
+        }
+      }
+    })
+    .then(() => console.log('created'));
   };
 });

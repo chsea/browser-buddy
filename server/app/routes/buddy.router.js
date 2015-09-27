@@ -2,6 +2,8 @@
 var router = require('express').Router();
 var mongoose = require('mongoose');
 var _ = require('lodash');
+var fs = require('fs');
+var request = require('request');
 
 module.exports = router;
 
@@ -33,13 +35,11 @@ router.get('/:id', function(req, res, next){
 
 //CREATE a new buddy
 router.post('/', function(req, res, next){
-  console.log(req.body);
-  res.end();
-  // Buddy.create(req.body)
-  //   .then(function(newBuddy){
-  //     res.json(newBuddy);
-  //   })
-  //   .then(null, next);
+  Buddy.create(req.body)
+    .then(function(newBuddy){
+      res.json(newBuddy);
+    })
+    .then(null, next);
 });
 
 //UPDATE a specific buddy
