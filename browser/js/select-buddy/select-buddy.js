@@ -7,11 +7,10 @@ app.config(function ($stateProvider) {
       buddies: (Buddy) => Buddy.findAll()
     }
   });
-}).controller('SelectBuddyController', function($scope, $state, buddies, Buddy, $rootScope){
+}).controller('SelectBuddyController', function($scope, $state, buddies){
   $scope.buddies = buddies;
-	var currentBuddy;
-	$scope.chooseBuddy = function(){
-		buddyId = $scope.buddy;
-    currentBuddy = _.find(buddies, (buddy) => buddy._id == buddyId);
+	$scope.chooseBuddy = () => {
+    $scope.currentBuddy = _.find(buddies, (buddy) => buddy._id == $scope.buddy);
+    $state.go('hangout', {id: $scope.buddy});
   };
 });

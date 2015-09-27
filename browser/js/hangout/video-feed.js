@@ -1,7 +1,7 @@
 app.directive('videoFeed', function(EmotionResponseFactory) {
   return {
     restrict: 'E',
-    templateUrl: 'js/hang-out/video-feed.html',
+    templateUrl: 'js/hangout/video-feed.html',
     link: (scope) => {
       var vid = document.getElementById('videoel');
       var overlay = document.getElementById('overlay');

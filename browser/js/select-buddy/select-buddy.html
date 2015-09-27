@@ -1,0 +1,10 @@
+<section>
+  <form ng-submit="chooseBuddy()">
+ 		<select placeholder="Buddies" ng-model="buddy" name="buddy">
+ 		 	<option ng-repeat="buddy in buddies" value="{{buddy._id}}">{{buddy.name}}</option>
+		</select>
+		<div class="form-actions">
+  	<button type="submit">Choose {{buddy.name}}!</button>
+		</div>
+	</form>
+</section>

@@ -1,16 +1,17 @@
 app.config(function ($stateProvider) {
   $stateProvider.state('hangout', {
-    url: '/hangout',
-    templateUrl: '/js/hangout/hang-out.html',
+    url: '/hangout/:id',
+    templateUrl: '/js/hangout/hangout.html',
     controller: 'HangoutController',
     resolve: {
-      buddies: (Buddy) => Buddy.findAll()
+      buddy: (Buddy, $stateParams) => Buddy.find($stateParams.id)
     }
   });
-}).controller('HangoutController', function($scope, $state, buddies, Buddy, $rootScope){
+}).controller('HangoutController', function($scope, $state, buddy, $rootScope){
+  let currentBuddy = buddy;
   var response;
   setInterval(() => $scope.$apply(() => {
-    response = currentBuddy ? currentBuddy.responses[$scope.emotion] : null;
+    response = currentBuddy.responses[$scope.emotion];
     if (response) {
     	$scope.buddyResponse = response.text;
       $scope.imgSrc = response.pictureUrl;
@@ -22,10 +23,4 @@ app.config(function ($stateProvider) {
     }
   }), 3000);
 	var buddyId;
-  $scope.buddies = buddies;
-	var currentBuddy;
-	$scope.chooseBuddy = function(){
-		buddyId = $scope.buddy;
-    currentBuddy = _.find(buddies, (buddy) => buddy._id == buddyId);
-  };
 });
