@@ -33,11 +33,13 @@ router.get('/:id', function(req, res, next){
 
 //CREATE a new buddy
 router.post('/', function(req, res, next){
-  Buddy.create(req.body)
-    .then(function(newBuddy){
-      res.json(newBuddy);
-    })
-    .then(null, next);
+  console.log(req.body);
+  res.end();
+  // Buddy.create(req.body)
+  //   .then(function(newBuddy){
+  //     res.json(newBuddy);
+  //   })
+  //   .then(null, next);
 });
 
 //UPDATE a specific buddy
