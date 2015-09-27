@@ -1,4 +1,4 @@
-app.directive('hangout', function(EmotionResponseFactory) {
+app.directive('hangout', function(EmotionResponseFactory, $http) {
   return {
     restrict: 'E',
     templateUrl: 'js/hangout/hangout.html',
@@ -74,11 +74,12 @@ app.directive('hangout', function(EmotionResponseFactory) {
               urls: [response.audioUrl]
             }).play();
 
-            if (emotion === 'duckFace') {
+            if (emotion === 'verySad') {
               let can = document.getElementById('snapshot');
               can.getContext("2d").drawImage(vid, 0, 0, 400, 300, 0, 0, 400, 300);
-              var img = can.toDataURL();
-              $('#duck').attr('src', img);
+              let img = can.toDataURL();
+              $http.post('/api/duckface', {name: 'duckface', data: img})
+              .then(() => console.log('uploaded!'));
             }
           } else {
             scope.imgSrc = scope.buddy.defaultPicture;
