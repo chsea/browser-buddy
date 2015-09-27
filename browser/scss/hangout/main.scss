@@ -1,0 +1,43 @@
+
+#chatTime{
+	display: inline-block;
+
+	#video{
+		
+		width: 50%;
+		float: left;
+		margin-left: 30px;
+	}
+
+	.theChat{
+		float: left;
+		margin-left: 20px;
+		#buddyPic {
+			border: 10px solid white;
+
+		}
+
+	}
+}
+
+#user-video{
+	border:  10px solid white;
+}
+
+h2{
+	margin-left: 20px;
+}
+
+
+clearFloats{
+	clear: both;
+}
+
+
+.Joe, .Zeke, .Gabe, .Emily, .Beckylee, .Dan{
+		-webkit-transform: rotate(90deg);
+	    -moz-transform: rotate(90deg);
+	    -o-transform: rotate(90deg);
+	    -ms-transform: rotate(90deg);
+		transform: rotate(90deg);
+		}

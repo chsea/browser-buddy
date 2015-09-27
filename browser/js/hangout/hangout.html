@@ -1,12 +1,25 @@
-<div id="video">
-  <video id="user-video" width="400" height="300" preload="auto" loop>
-  </video>
-  <canvas id="snapshot" style="display: none" width="400" height="300"></canvas>
-  <canvas id="overlay" width="400" height="300"></canvas>
+
+<div id="chatTime">
+
+<div class="theChat">
+
+	<img id="buddyPic" class="{{buddy.name}}" ng-src="{{imgSrc}}" width="400" height="400"/>
+	<img id="duck" />
+	<p>{{buddy.name}} says: {{buddyResponse}} </p>
 </div>
-<img ng-src="{{imgSrc}}" width="300" height="300"/>
-<img id="duck" />
-<p>HOWDY {{buddyResponse}}</p>
+
+	<div id="video">
+	  <video id="user-video" width="400" height="300" preload="auto" loop>
+	  </video>
+	  <canvas id="snapshot" style="display: none" width="400" height="300"></canvas>
+	  <canvas id="overlay" width="400" height="300"></canvas>
+	</div>
+
+</div>
+
+<div class="clearFloats"></div>
+
+
 <div>
   <input type="button" ng-click="startVideo()" value="Start" />
   <input type="button" ng-click="stopVideo()" value="Stop Video" />
