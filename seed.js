@@ -8,6 +8,7 @@ var Buddy = Promise.promisifyAll(mongoose.model('Buddy'));
 var seedBuddy =[{
   name: 'Omri',
   defaultPicture: '/images/omri/default.jpg',
+  greeting: '/audio/omri/veryhappy.m4a',
   responses: {
     happy: {
       text: 'Interesting! :)',
@@ -40,6 +41,7 @@ var seedBuddy =[{
 {
   name: 'Joe',
   defaultPicture: '/images/joe/default.jpg',
+  greeting: '/audio/omri/veryhappy.m4a',
   responses: {
     happy: {
       text: 'insert happy response',
@@ -72,6 +74,7 @@ var seedBuddy =[{
 {
   name: 'Zeke',
   defaultPicture: '/images/zeke/default.jpg',
+  greeting: '/audio/omri/veryhappy.m4a',
   responses: {
     happy: {
       text: 'insert happy response',
@@ -104,6 +107,7 @@ var seedBuddy =[{
 {
   name: 'Gabe',
   defaultPicture: '/images/gabe/default.jpg',
+  greeting: '/audio/omri/veryhappy.m4a',
   responses: {
     happy: {
       text: 'insert happy response',
@@ -136,6 +140,7 @@ var seedBuddy =[{
 {
   name: 'Chel',
   defaultPicture: '/images/chel/default.jpg',
+  greeting: '/audio/omri/veryhappy.m4a',
   responses: {
     happy: {
       text: 'insert happy response',
@@ -168,6 +173,7 @@ var seedBuddy =[{
 {
   name: 'Emily',
   defaultPicture: '/images/emily/default.jpg',
+  greeting: '/audio/omri/veryhappy.m4a',
   responses: {
     happy: {
       text: 'Backstreet\'s Back!!',
@@ -200,6 +206,7 @@ var seedBuddy =[{
 {
   name: 'Jon',
   defaultPicture: '/images/jon/default.jpg',
+  greeting: '/audio/omri/veryhappy.m4a',
   responses: {
     happy: {
       text: 'insert happy response',
@@ -232,6 +239,7 @@ var seedBuddy =[{
 {
   name: 'Beckylee',
   defaultPicture: '/images/beckylee/default.jpg',
+  greeting: '/audio/omri/veryhappy.m4a',
   responses: {
     happy: {
       text: 'insert happy response',
@@ -264,6 +272,7 @@ var seedBuddy =[{
 {
   name: 'Dan',
   defaultPicture: '/images/dan/default.jpg',
+  greeting: '/audio/omri/veryhappy.m4a',
   responses: {
     happy: {
       text: 'insert happy response',
