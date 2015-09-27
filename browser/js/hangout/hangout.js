@@ -77,15 +77,22 @@ app.directive('hangout', function(EmotionResponseFactory, $http) {
           	scope.buddyResponse = response.text;
             scope.imgSrc = response.pictureUrl;
 
-            if(response.audioUrl) {
+            //Play audio or text-to-speech
               let speakEnd = () => {
                 if (scope.videoOn) setTimeout(setEmotionResponse, 500);
               };
+            if(response.audioUrl) {
               let speak = new Howl({
                 urls: [response.audioUrl],
                 onend: speakEnd
               }).play();
+            } else {
+              meSpeak.loadConfig("/js/lib/mespeak/mespeak_config.json");
+              meSpeak.loadVoice("/js/lib/mespeak/en.json");
+              meSpeak.speak(response.text, {}, speakEnd);
             }
+
+            //Slack out your duckface!!
             if (emotion === 'duckFace') {
               let can = document.getElementById('snapshot');
               can.getContext("2d").drawImage(vid, 0, 0, 533, 400, 0, 0, 533, 400);
