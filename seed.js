@@ -10,24 +10,29 @@ var seedBuddy =[{
   defaultPicture: '/images/omri/default.jpg',
   responses: {
     happy: {
-      text: 'Interesting.',
-      url: '/images/omri/happy.jpg',
+      text: 'Interesting! :)',
+      pictureUrl: '/images/omri/happy.jpg',
+      audioUrl: '/audio/omri/happy.m4a',
     },
     veryHappy: {
-      text: 'Interesting.',
-      url: '/images/omri/veryhappy.jpg',
+      text: 'Inter-ESTing. :D',
+      pictureUrl: '/images/omri/veryhappy.jpg',
+      audioUrl: '/audio/omri/veryhappy.m4a',
     },
     sad: {
-      text: 'Interesting.',
-      url: '/images/omri/sad.jpg',
+      text: 'Interesting. :(',
+      pictureUrl: '/images/omri/sad.jpg',
+      audioUrl: '/audio/omri/sad.m4a',
     },
     verySad: {
-      text: 'Interesting.',
-      url: '/images/omri/verysad.jpg',
+      text: '...Interesting. :\'(',
+      pictureUrl: '/images/omri/verysad.jpg',
+      audioUrl: '/audio/omri/verysad.m4a',
     },
     duckFace: {
-      text: 'Not interesting.',
-      url: '/images/omri/duckface.jpg'
+      text: 'Mm, not interesting.',
+      pictureUrl: '/images/omri/duckface.jpg',
+      audioUrl: '/audio/omri/duckface.m4a',
     }
   }
 // },
