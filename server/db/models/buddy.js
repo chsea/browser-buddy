@@ -15,7 +15,8 @@ var schema = new mongoose.Schema({
     type: String
   },
   description: {
-    type: String
+    type: String,
+    default: 'Your new best friend!'
   },
   role: {
     type: String
@@ -46,6 +47,10 @@ var schema = new mongoose.Schema({
       audioUrl: String,
       pictureUrl: String
     }
+  },
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User'
   }
 });
 

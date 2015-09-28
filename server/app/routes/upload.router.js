@@ -3,6 +3,12 @@ var fs = require('fs');
 var request = require('request');
 
 router.post('/', (req, res) => {
+  var base64String = req.body.data.split(',')[1];
+  var fileData = new Buffer(base64String, 'base64');
+  fs.writeFile('./happy.png', fileData, () => res.end());
+});
+
+router.post('/duckface', (req, res) => {
   let base64String = req.body.data.split(',')[1];
   let fileData = new Buffer(base64String, 'base64');
   let filePath = `./browser/images/duckface/${req.body.name}${new Date()}.png`;
