@@ -67,6 +67,11 @@
 		display: block;
 	}
 
+	.active{
+		border: solid #ff4f57 2px;
+	}
+
+
 	.imageOverlay{
   		background: rgba(250, 250, 250, 0.5);
   		bottom: 0;
