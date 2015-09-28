@@ -8,7 +8,7 @@ app.config(function ($stateProvider) {
 
 });
 
-app.controller('LoginSignupCtrl', function ($rootScope, AUTH_EVENTS, $scope, AuthService, $state, UserFactory) {
+app.controller('LoginSignupCtrl', function ($rootScope, AUTH_EVENTS, $scope, AuthService, $state, User) {
 
     $scope.login = {};
     $scope.loginError = null;
@@ -35,10 +35,8 @@ app.controller('LoginSignupCtrl', function ($rootScope, AUTH_EVENTS, $scope, Aut
 
 
   $scope.createUser = function(userInfo) {
-
     $scope.signupError = null;
-
-    UserFactory.save(userInfo)
+    User.create(userInfo)
     .then(function() {
         $state.go('selectBuddy');
         $rootScope.$broadcast(AUTH_EVENTS.loginSuccess);

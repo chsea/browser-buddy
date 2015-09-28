@@ -44,7 +44,7 @@ router.put('/:id', function(req, res, next) {
 
 
 // CREATE a user
-router.post('/signup', function(req, res, next) {
+router.post('/', function(req, res, next) {
   User.create(req.body)
     .then(function(user) {
       req.login(user, function(err) {
@@ -54,6 +54,3 @@ router.post('/signup', function(req, res, next) {
     })
     .then(null, next);
 });
-
-
-
