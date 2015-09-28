@@ -79,4 +79,42 @@ navbar {
     background: none;
     outline: none !important;
   }
+
+  .welcome {
+    float: right;
+    margin-top: 15px;
+
+}
+
+  .welcome span{
+    color: white;
+    font-family: 'Open Sans';
+    font-size: 14px;
+    margin-right: 10px;
+
+  }
+
+  .welcome span a{
+    color: white;
+    font-family: 'Open Sans';
+    font-size: 14px;
+    margin-right: 10px;
+    &:hover{
+      color: #ff4f57;
+    }
+
+  }
+
+  .welcome a {
+      color: white;
+      cursor: pointer;
+      font-family: 'Open Sans';
+      font-size: 14px;
+      margin-left: 10px;
+      &:hover{
+      color: #ff4f57;
+    }
+
+    }
+
 }
