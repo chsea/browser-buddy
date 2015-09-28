@@ -1,6 +1,6 @@
 var router = require('express').Router();
 var fs = require('fs');
-var mkdirp = require('mkdirp');
+var mkdirp = require('mkdirp')
 var request = require('request');
 
 router.post('/', (req, res) => {

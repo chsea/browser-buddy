@@ -91,28 +91,4 @@ navbar {
     font-family: 'Open Sans';
     font-size: 14px;
   }
-
-  .welcome a{
-    color: white;
-    font-family: 'Open Sans';
-    font-size: 14px;
-    margin-right: 10px;
-    &:hover{
-      color: #ff4f57;
-    }
-
-  }
-
-  .welcome a {
-      color: white;
-      cursor: pointer;
-      font-family: 'Open Sans';
-      font-size: 14px;
-      margin-left: 10px;
-      &:hover{
-      color: #ff4f57;
-    }
-
-    }
-
 }

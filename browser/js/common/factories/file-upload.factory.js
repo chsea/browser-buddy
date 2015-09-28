@@ -5,7 +5,6 @@ app.factory('FileUploadFactory', function($http) {
     var file = img.files[0];
     var reader = new FileReader();
     reader.readAsDataURL(file);
-
     reader.onloadend = () => $http.post('/api/upload', {data: reader.result, name: name, emotion: emotion});
   };
 
