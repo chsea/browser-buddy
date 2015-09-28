@@ -10,6 +10,7 @@ app.config(function ($stateProvider) {
 }).controller('SelectBuddyController', function($scope, $state, buddies){
   $scope.buddies = buddies;
   $scope.role = '';
+  $scope.selectedBuddy;
 
 	$scope.chooseBuddy = () => {
     $scope.currentBuddy = _.find(buddies, (buddy) => buddy._id == $scope.buddy);
@@ -18,6 +19,9 @@ app.config(function ($stateProvider) {
 
   $scope.sayGreeting = function(selectedBuddy){
     $scope.greeter = _.find(buddies, (buddy) => buddy._id == selectedBuddy._id);
-    var greet = new Howl({urls: [$scope.greeter.greeting]}).play();
+    if ($scope.greeter !== $scope.selectedBuddy){
+      var greet = new Howl({urls: [$scope.greeter.greeting]}).play();
+      } 
+    $scope.selectedBuddy = $scope.greeter;
   };
 });
