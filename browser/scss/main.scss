@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  //background: #fdfdfd;
+  //background-color: #282828;
+  //background-color: #CED0CE;
+  background-color: #E6E8E6
+}
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+#main {
+  padding-top: 60px;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+@import 'directives/_main';
+@import 'tutorial/main';
+@import 'login/main';
+@import 'select-buddy/main';
+@import 'hangout/main';

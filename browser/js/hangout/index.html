@@ -1,0 +1,40 @@
+<section id="home">
+  <style>
+  #overlay {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				-o-transform : scaleX(-1);
+				-webkit-transform : scaleX(-1);
+				transform : scaleX(-1);
+				-ms-filter : fliph; /*IE*/
+				filter : fliph; /*IE*/
+				width : 533px;
+				height : 400px;
+			/*	float: left;*/
+			}
+			#user-video {
+				-o-transform : scaleX(-1);
+				-webkit-transform : scaleX(-1);
+				transform : scaleX(-1);
+				-ms-filter : fliph; /*IE*/
+				filter : fliph; /*IE*/
+				width : 533px;
+				height : 400px;
+			/*	float: left;*/
+			}
+			#video {
+				/*float: left;*/
+				position : relative;
+				width : 370px;
+				/*margin : 0px auto;*/
+			}
+
+  </style>
+  <span class="startChat"><h2>Welcome! You are chatting with {{buddy.name}}.</h2> <div class="vidControlButtons">
+  <input type="button" ng-show="!videoOn" ng-click="startVideo()" value="START" />
+  <input type="button" ng-show="videoOn" ng-click="stopVideo()" value="STOP" />
+</div></span>
+  
+  <hangout></hangout>
+</section>

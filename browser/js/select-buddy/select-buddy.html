@@ -1,0 +1,48 @@
+<div id="selectBuddy">
+<!-- dropdown menu for buddy selection -->
+<div class="chatControls">
+  <form ng-submit="chooseBuddy()" class="chooseBuddyForm">
+ 		<select ng-model="buddy" name="buddy">
+      <option value="" disabled selected>Select From Buddy List</option>
+ 		 	<option ng-repeat="buddy in buddies" value="{{buddy._id}}">{{buddy.name}}</option>
+		</select>
+	<!-- 	<div class="form-actions"> -->
+  	<button type="submit">Start Chatting!</button>
+<!-- 		</div> -->
+	</form>
+
+  <div class="roleFilter">
+    Filter Buddies:
+    <button value="Student" ng-click="role = 'Student'">Students</button>
+    <button value="Instructor" ng-click="role = 'Instructor'">Instructors</button>
+    <button value="All" ng-click="role = ''">All</button>
+  </div>
+</div>
+
+<!-- display all buddies, click to chat -->
+ <div class="row">
+    <div class="col-md-4 col-sm-6 col-xs-12 thumb" ng-repeat="buddy in buddies | filter: role | orderBy: 'name'">
+    	<!-- <pre>{{buddy}}</pre> -->
+      <div class="thumbnail">
+        <a href ng-click="sayGreeting(buddy)" >
+          <div class="profileImg" ng-class="{active : selectedBuddy === buddy}">
+            <img draggable='true' class="img-responsive {{buddy.name}}" ng-src="{{buddy.defaultPicture}}" alt="">
+            <div class="imageOverlay" ng-show="buddy !== selectedBuddy">
+              <span>Click To Hear Greeting</span>
+            </div>
+            <div class="imageOverlay" ng-show="buddy === selectedBuddy" ui-sref="hangout({id: buddy._id})">
+              <span>Start Chatting</span>
+            </div>
+          </div>
+        </a>
+        <div class="caption">
+          <h5 ng-show="buddy !== selectedBuddy" ui-sref="hangout({id: buddy._id})"><span class="nuddyName">{{buddy.name}}</span> | <span class="buddyDescription">{{buddy.description}}</span> | <span class="role">{{buddy.role}}</span></h5>
+          <h5 ng-show="buddy === selectedBuddy" ui-sref="hangout({id: buddy._id})"><span>Start Chatting with {{buddy.name}}</span></h5>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--   end display buddies -->
+  <hr>
+
+</div>
