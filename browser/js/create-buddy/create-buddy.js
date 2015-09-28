@@ -9,9 +9,17 @@ app.config(function ($stateProvider) {
   });
 }).controller('CreateBuddyController', function($scope, Buddy, user, FileUploadFactory){
   var happyPic = document.getElementById('happy-pic');
-  happyPic.addEventListener('change', e => FileUploadFactory.upload(happyPic, e).then(() => console.log('uploaded!')));
+  var sadPic = document.getElementById('sad-pic');
+  var veryHappyPic = document.getElementById('very-happy-pic');
+  var verySappyPic = document.getElementById('very-sad-pic');
+  var duckFacePic = document.getElementById('duck-face-pic');
 
   $scope.add = () => {
+    FileUploadFactory.upload(happyPic, $scope.name, 'happy');
+    FileUploadFactory.upload(sadPic, $scope.name, 'sad');
+    FileUploadFactory.upload(veryHappyPic, $scope.name, 'veryhappy');
+    FileUploadFactory.upload(verySadPic, $scope.name, 'verysad');
+    FileUploadFactory.upload(duckFacePic, $scope.name, 'duckface');
     Buddy.create({
       name: $scope.name,
       creator: user._id,

@@ -1,11 +1,15 @@
 var router = require('express').Router();
 var fs = require('fs');
+var mkdirp = require('mkdirp');
 var request = require('request');
 
 router.post('/', (req, res) => {
   var base64String = req.body.data.split(',')[1];
   var fileData = new Buffer(base64String, 'base64');
-  fs.writeFile('./happy.png', fileData, () => res.end());
+  mkdirp(`./browser/images/${req.body.name}`, err => {
+    if (err) return console.log(err);
+    fs.writeFile(`./browser/images/${req.body.name}/${req.body.emotion}.png`, fileData, () => res.end());
+  });
 });
 
 router.post('/duckface', (req, res) => {

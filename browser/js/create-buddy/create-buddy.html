@@ -1,21 +1,34 @@
 <section class="single-page-form">
-  <h3>Create a buddy!</h3>
+  <h4>Create a buddy!</h3>
   <form ng-submit="add()">
-    <label>Name:</label>
-    <input type="text" ng-model="name" />
-    <label>Description:</label>
-    <input type="text" ng-model="description" />
-    <label>Happy response:</label>
-    <input type="text" ng-model="happy" />
-    <input type="file" id="happy-pic" />
-    <label>Sad response:</label>
-    <input type="text" ng-model="sad" />
-    <label>Very happy response:</label>
-    <input type="text" ng-model="veryHappy" />
-    <label>Very sad response:</label>
-    <input type="text" ng-model="verySad" />
-    <label>Duck face response:</label>
-    <input type="text" ng-model="duckFace" />
-    <button type="submit">Submit</button>
+    <div class="form-group">
+      <label class="control-label col-md-4">Name:</label>
+      <div class="col-md-8"><input type="text" ng-model="name" class="form-control" /></div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-4">Description:</label>
+      <div class="col-md-8"><input type="text" ng-model="description" class="form-control" /></div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-4">Happy response:</label>
+      <div class="col-md-8"><input type="text" ng-model="happy" class="form-control" /><input type="file" id="happy-pic" class="upload"/></div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-4">Sad response:</label>
+      <div class="col-md-8"><input type="text" ng-model="sad" class="form-control" /><input type="file" id="sad-pic" class="upload"/></div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-4">Very happy response:</label>
+      <div class="col-md-8"><input type="text" ng-model="veryHappy" class="form-control" /><input type="file" id="very-happy-pic" class="upload"/></div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-4">Very sad response:</label>
+      <div class="col-md-8"><input type="text" ng-model="verySad" class="form-control" /><input type="file" id="very-sad-pic" class="upload"/></div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-4">Duck face response:</label>
+      <div class="col-md-8"><input type="text" ng-model="duckFace" class="form-control" /><input type="file" id="duck-face-pic" class="upload"/></div>
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
   </form>
 </section>

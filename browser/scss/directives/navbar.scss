@@ -78,6 +78,9 @@ navbar {
     margin-bottom: 10px;
     background: none;
     outline: none !important;
+    &:hover {
+      color: #ff4f57;
+    }
   }
 
   .welcome {
