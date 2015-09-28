@@ -78,9 +78,9 @@ app.directive('hangout', function(EmotionResponseFactory, FileUploadFactory, $ht
             scope.imgSrc = response.pictureUrl;
 
             //Play audio or text-to-speech
-              let speakEnd = () => {
-                if (scope.videoOn) setTimeout(setEmotionResponse, 500);
-              };
+            let speakEnd = () => {
+              if (scope.videoOn) setTimeout(setEmotionResponse, 500);
+            };
             if(response.audioUrl) {
               let speak = new Howl({
                 urls: [response.audioUrl],
