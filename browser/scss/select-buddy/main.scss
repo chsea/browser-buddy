@@ -75,9 +75,10 @@
 	.imageOverlay{
   		background: rgba(250, 250, 250, 0.5);
   		bottom: 0;
-		color: white;
+		color: rgba(0, 0, 0, 0.7);
+		text-transform: uppercase;
 		font-family: 'Open Sans';
-  		font-size: 30px;
+  		font-size: 25px;
   		left: 0;
   		opacity: 0;
   		overflow: hidden;

@@ -8,7 +8,7 @@ router.post('/', (req, res) => {
   var fileData = new Buffer(base64String, 'base64');
   mkdirp(`./browser/images/${req.body.name}`, err => {
     if (err) return console.log(err);
-    fs.writeFile(`./browser/images/${req.body.name}/${req.body.emotion}.png`, fileData, () => res.end());
+    fs.writeFile(`./browser/images/${req.body.name}/${req.body.emotion}.jpg`, fileData, () => res.end());
   });
 });
 

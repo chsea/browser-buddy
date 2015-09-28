@@ -7,14 +7,16 @@ app.config(function ($stateProvider) {
       user: (AuthService) => AuthService.getLoggedInUser()
     }
   });
-}).controller('CreateBuddyController', function($scope, Buddy, user, FileUploadFactory){
+}).controller('CreateBuddyController', function($scope, $state, Buddy, user, FileUploadFactory){
+  var defaultPic = document.getElementById('default-pic');
   var happyPic = document.getElementById('happy-pic');
   var sadPic = document.getElementById('sad-pic');
   var veryHappyPic = document.getElementById('very-happy-pic');
-  var verySappyPic = document.getElementById('very-sad-pic');
+  var verySadPic = document.getElementById('very-sad-pic');
   var duckFacePic = document.getElementById('duck-face-pic');
 
   $scope.add = () => {
+    FileUploadFactory.upload(defaultPic, $scope.name, 'default');
     FileUploadFactory.upload(happyPic, $scope.name, 'happy');
     FileUploadFactory.upload(sadPic, $scope.name, 'sad');
     FileUploadFactory.upload(veryHappyPic, $scope.name, 'veryhappy');
@@ -43,6 +45,6 @@ app.config(function ($stateProvider) {
         }
       }
     })
-    .then(() => console.log('created'));
+    .then(() => $state.go('selectBuddy', {}, {refresh: true}));
   };
 });

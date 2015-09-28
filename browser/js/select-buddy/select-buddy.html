@@ -4,17 +4,17 @@
   <form ng-submit="chooseBuddy()" class="chooseBuddyForm">
  		<select ng-model="buddy" name="buddy">
       <option value="" disabled selected>Select From Buddy List</option>
- 		 	<option ng-repeat="buddy in buddies" value="{{buddy._id}}">{{buddy.name}}</option>
+ 		 	<option ng-repeat="buddy in buddies | filter: role | orderBy: 'name'" value="{{buddy._id}}">{{buddy.name}}</option>
 		</select>
 	<!-- 	<div class="form-actions"> -->
   	<button type="submit">Start Chatting!</button>
 <!-- 		</div> -->
 	</form>
-
   <div class="roleFilter">
     Filter Buddies:
     <button value="Student" ng-click="role = 'Student'">Students</button>
     <button value="Instructor" ng-click="role = 'Instructor'">Instructors</button>
+    <button value="Custom" ng-click="role = 'Custom'">Custom</button>
     <button value="All" ng-click="role = ''">All</button>
   </div>
 </div>

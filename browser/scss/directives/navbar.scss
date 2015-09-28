@@ -69,13 +69,11 @@ navbar {
     }
   }
 
-  .login-button {
-    float: right;
+  .button {
     color: white;
     font-family: 'Open Sans';
     border: 1px solid white;
-    margin-top: 20px;
-    margin-bottom: 10px;
+    margin: 10px 0 10px 10px;
     background: none;
     outline: none !important;
     &:hover {
@@ -83,21 +81,18 @@ navbar {
     }
   }
 
+  .login-button {
+    float: right
+  }
+
   .welcome {
     float: right;
-    margin-top: 15px;
-
-}
-
-  .welcome span{
     color: white;
     font-family: 'Open Sans';
     font-size: 14px;
-    margin-right: 10px;
-
   }
 
-  .welcome span a{
+  .welcome a{
     color: white;
     font-family: 'Open Sans';
     font-size: 14px;
