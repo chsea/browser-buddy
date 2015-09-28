@@ -21,7 +21,7 @@ app.config(function ($stateProvider) {
     $scope.greeter = _.find(buddies, (buddy) => buddy._id == selectedBuddy._id);
     if ($scope.greeter !== $scope.selectedBuddy){
       var greet = new Howl({urls: [$scope.greeter.greeting]}).play();
-      } 
+      }
     $scope.selectedBuddy = $scope.greeter;
   };
 });
