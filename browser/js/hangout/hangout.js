@@ -1,4 +1,4 @@
-app.directive('hangout', function(EmotionResponseFactory, $http) {
+app.directive('hangout', function(EmotionResponseFactory, FileUploadFactory, $http) {
   return {
     restrict: 'E',
     templateUrl: 'js/hangout/hangout.html',
@@ -97,8 +97,7 @@ app.directive('hangout', function(EmotionResponseFactory, $http) {
               let can = document.getElementById('snapshot');
               can.getContext("2d").drawImage(vid, 0, 0, 533, 400, 0, 0, 533, 400);
               let img = can.toDataURL();
-              $http.post('/api/duckface', {name: 'duckface', data: img})
-              .then(() => console.log('uploaded!'));
+              FileUploadFactory.duckface(img).then(() => console.log('uploaded!'));
             }
           } else {
             scope.imgSrc = scope.buddy.defaultPicture;
