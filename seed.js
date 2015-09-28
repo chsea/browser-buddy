@@ -163,12 +163,12 @@ var seedBuddy =[{
       audioUrl: '/audio/chel/veryhappy.m4a',
     },
     sad: {
-      text: 'Cheer up buddy, uhhhh, there\'s more Angular to write',
+      text: 'I feel bad, but, uhhh...that\'s not going to interfere with you gettting your work done, is it?',
       pictureUrl: '/images/chel/sad.jpg',
       audioUrl: '/audio/chel/sad.m4a',
     },
     verySad: {
-      text: 'I feel bad, but, uhhh...that\'s not going to interfere with you gettting your work done, is it?',
+      text: 'Cheer up buddy, uhhhh, there\'s more Angular to write',
       pictureUrl: '/images/chel/verysad.jpg',
       audioUrl: '/audio/chel/verysad.m4a',
     },
