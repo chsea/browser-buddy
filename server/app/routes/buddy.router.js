@@ -38,6 +38,7 @@ router.post('/', function(req, res, next){
   for (var emotion in req.body.responses) {
     req.body.responses[emotion].pictureUrl = `/images/${req.body.name}/${emotion}.jpg`;
   }
+  req.body.defaultPicture = `/images/${req.body.name}/default.jpg`;
   Buddy.create(req.body)
     .then(function(newBuddy){
       res.json(newBuddy);

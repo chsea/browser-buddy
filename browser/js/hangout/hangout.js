@@ -27,7 +27,7 @@ app.directive('hangout', function(EmotionResponseFactory, FileUploadFactory, $ht
         }
       };
 
-      /*********** setup of emotion detection *************/
+      //emotion detection
       var ctrack = new clm.tracker({useWebGL: true});
       ctrack.init(pModel);
       var ec = new emotionClassifier();
@@ -92,13 +92,13 @@ app.directive('hangout', function(EmotionResponseFactory, FileUploadFactory, $ht
               meSpeak.speak(response.text, {}, speakEnd);
             }
 
-            //Slack out your duckface!!
-            if (emotion === 'duckFace') {
-              let can = document.getElementById('snapshot');
-              can.getContext("2d").drawImage(vid, 0, 0, 533, 400, 0, 0, 533, 400);
-              let img = can.toDataURL();
-              FileUploadFactory.duckface(img).then(() => console.log('uploaded!'));
-            }
+            //Slack out your duckface!! (disabled to protect the guilty)
+            // if (emotion === 'duckFace') {
+            //   let can = document.getElementById('snapshot');
+            //   can.getContext("2d").drawImage(vid, 0, 0, 533, 400, 0, 0, 533, 400);
+            //   let img = can.toDataURL();
+            //   FileUploadFactory.duckface(img).then(() => console.log('uploaded!'));
+            // }
           } else {
             scope.imgSrc = scope.buddy.defaultPicture;
             scope.buddyResponse = "Hello!";

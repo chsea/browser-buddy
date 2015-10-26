@@ -21,10 +21,9 @@
 </div>
 
 <!-- display all buddies, click to chat -->
- <div class="row">
-    <div class="col-md-4 col-sm-6 col-xs-12 thumb" ng-repeat="buddy in buddies | filter: role | orderBy: 'name'">
-    	<!-- <pre>{{buddy}}</pre> -->
-      <div class="thumbnail">
+ <div class="buddies">
+    <div class="buddy" ng-repeat="buddy in buddies | filter: role | orderBy: 'name'">
+    	<div class="thumbnail">
         <a href ng-click="sayGreeting(buddy)" >
           <div class="profileImg" ng-class="{active : selectedBuddy === buddy}">
             <img draggable='true' class="img-responsive {{buddy.name}}" ng-src="{{buddy.defaultPicture}}" alt="">
@@ -45,5 +44,4 @@
   </div>
 <!--   end display buddies -->
   <hr>
-
 </div>

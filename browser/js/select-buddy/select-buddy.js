@@ -4,11 +4,12 @@ app.config(function ($stateProvider) {
     templateUrl: '/js/select-buddy/select-buddy.html',
     controller: 'SelectBuddyController',
     resolve: {
-      buddies: (Buddy) => Buddy.findAll({}, {bypassCache: true})
+      user: AuthService => AuthService.getLoggedInUser(),
+      buddies: Buddy => Buddy.findAll({}, {bypassCache: true})
     }
   });
-}).controller('SelectBuddyController', function($scope, $state, buddies){
-  $scope.buddies = buddies;
+}).controller('SelectBuddyController', function($scope, $state, buddies, user){
+  $scope.buddies = buddies.filter(buddy => !buddy.creator || buddy.creator == user._id);
   $scope.role = '';
 
 	$scope.chooseBuddy = () => {
