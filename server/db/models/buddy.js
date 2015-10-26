@@ -48,7 +48,7 @@ var schema = new mongoose.Schema({
       pictureUrl: String
     }
   },
-  user: {
+  creator: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User'
   }

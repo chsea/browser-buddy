@@ -152,4 +152,17 @@
       cursor: pointer;
     }
   }
+  .buddies {
+    display: flex;
+    flex-wrap: wrap;
+    // justify-content: space-around;
+    width: 100%;
+  }
+  .buddy {
+    display: block;
+    width: 375px;
+  }
+  .buddy {
+    margin-right: 25px;
+  }
 }
