@@ -1,6 +1,6 @@
 var router = require('express').Router();
 var fs = require('fs');
-var mkdirp = require('mkdirp')
+var mkdirp = require('mkdirp');
 var request = require('request');
 
 router.post('/', (req, res) => {
@@ -8,7 +8,7 @@ router.post('/', (req, res) => {
   var fileData = new Buffer(base64String, 'base64');
   mkdirp(`./browser/images/${req.body.name}`, err => {
     if (err) return console.log(err);
-    fs.writeFile(`./browser/images/${req.body.name}/${req.body.emotion}.jpg`, fileData, () => res.end());
+    fs.writeFile(`./browser/images/${req.body.name}/${req.body.emotion.toLowerCase()}.jpg`, fileData, () => res.end());
   });
 });
 
